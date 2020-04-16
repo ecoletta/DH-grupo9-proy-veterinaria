@@ -18,8 +18,8 @@ Ezequiel Coletta: Licenciado en Sistemas de Informacion. MBA en Gesti√≥n Estrat√
 Sitios de referencia:
 ////////////////////////
 
-1- https://www.veterinariaalem.com/ (Veterinaria Alem)
-2- https://www.centropet.com/ (Centropet)
-3- https://tienda.faunatikos.com.ar/ (Faunatikos)
-4- https://www.mascotasdeloeste.com.ar/ (Mascotas del Oeste)
-5- https://animalworldveterinaria.com.ar/ (Animal World Veterinaria)
+1- https://www.veterinariaalem.com/ (Veterinaria Alem) <br>
+2- https://www.centropet.com/ (Centropet) <br>
+3- https://tienda.faunatikos.com.ar/ (Faunatikos) <br>
+4- https://www.mascotasdeloeste.com.ar/ (Mascotas del Oeste) <br>
+5- https://animalworldveterinaria.com.ar/ (Animal World Veterinaria) <br>
