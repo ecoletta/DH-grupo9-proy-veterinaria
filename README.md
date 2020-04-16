@@ -9,16 +9,17 @@ Siendo que el alcance es bastante amplio, se sugiere orientar el desarrollo haci
 
 El canal de distribucion para estos productos sera un ecommerce.
 
-<u><b>Descripción del equipo:</b></u>
+<b>Descripción del equipo:</b><br>
+//////////////////////////
 
 
-<u><b>Ezequiel Coletta:</b></u> Licenciado en Sistemas de Informacion. MBA en Gestión Estratégica de Técnologia y Sistemas de Información. Arquitecto de Infraestructuras de TI. Ayudante ad-honorem en UBA - Catedra Actuación Profesional del Licenciado en Sistemas de Información.
+<b>Ezequiel Coletta:</b> Licenciado en Sistemas de Informacion. MBA en Gestión Estratégica de Técnologia y Sistemas de Información. Arquitecto de Infraestructuras de TI. Ayudante ad-honorem en UBA - Catedra Actuación Profesional del Licenciado en Sistemas de Información.
 
-<u><b>Sebastian Gregori:</b></u>
+<b>Sebastian Gregori:</b>
 
 
-<u><b>Sitios de referencia:</b></u>
-
+<b>Sitios de referencia:</b><br>
+//////////////////////////
 
 1- https://www.veterinariaalem.com/ (Veterinaria Alem) <br>
 2- https://www.centropet.com/ (Centropet) <br>
