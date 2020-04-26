@@ -26,3 +26,13 @@ El canal de distribucion para estos productos sera un ecommerce.
 3- https://tienda.faunatikos.com.ar/ (Faunatikos) <br>
 4- https://www.mascotasdeloeste.com.ar/ (Mascotas del Oeste) <br>
 5- https://animalworldveterinaria.com.ar/ (Animal World Veterinaria) <br>
+
+<b>Tablero de Trello Asociado::</b><br>
+//////////////////////////
+
+https://trello.com/b/yKNA07xj/dh-proyecto-veterinaria
+
+Nivel de acceso: 
+
+Lectura (Público) 
+Edicion (Solo miembros del equipo) 
