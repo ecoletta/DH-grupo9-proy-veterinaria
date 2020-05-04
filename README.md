@@ -15,7 +15,7 @@ El canal de distribucion para estos productos sera un ecommerce.
 
 <b>Ezequiel Coletta:</b> Licenciado en Sistemas de Informacion. MBA en Gestión Estratégica de Técnologia y Sistemas de Información. Arquitecto de Infraestructuras de TI. Ayudante ad-honorem en UBA - Catedra Actuación Profesional del Licenciado en Sistemas de Información.
 
-<b>Sebastian Gregori:</b>
+<b>Sebastian Gregori:</b> Ingeniero en Electrónica y Comunicaciones.
 
 
 <b>Sitios de referencia:</b><br>
@@ -25,7 +25,7 @@ El canal de distribucion para estos productos sera un ecommerce.
 2- https://www.centropet.com/ (Centropet) <br>
 3- https://tienda.faunatikos.com.ar/ (Faunatikos) <br>
 4- https://www.mascotasdeloeste.com.ar/ (Mascotas del Oeste) <br>
-5- https://animalworldveterinaria.com.ar/ (Animal World Veterinaria) <br>
+5- https://www.puppis.com.ar/ (Artículos para mascotas) <br>
 
 <b>Tablero de Trello Asociado::</b><br>
 //////////////////////////
