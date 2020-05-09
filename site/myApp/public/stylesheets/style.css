@@ -1,8 +1,20 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+/* Variables */
+:root {
+  --yellow: #FCE77A;
+  --white: #FFFFFF;
+  --celeste: #72CEE0;
+  --gray: #666666;
+  --light-gray: #ebebeb;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: var(--celeste)
 }
