@@ -18,3 +18,18 @@ body {
 a {
   color: var(--celeste)
 }
+
+.top-navbar {
+  font-size: 1.5em;
+  list-style: none;
+}
+
+.top-navbar a {
+  display: block;
+  padding: 5px 5px;
+  float: left;
+}
+
+.right{
+  text-align: right;
+}
