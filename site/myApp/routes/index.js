@@ -14,4 +14,8 @@ router.get('/carga/', function(req, res, next) {
   res.render('addproduct', { title: 'Express' });
 });
 
+router.get('/detalle/', function(req, res, next) {
+  res.render('detalle', { title: 'Express' });
+});
+
 module.exports = router;
