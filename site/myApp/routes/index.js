@@ -14,6 +14,10 @@ router.get('/carga/', function(req, res, next) {
   res.render('addproduct', { title: 'Express' });
 });
 
+router.get('/registro/', function(req, res, next) {
+  res.render('registro', { title: 'Express' });
+});
+
 router.get('/detalle/', function(req, res, next) {
   res.render('detalle', { title: 'Express' });
 });
