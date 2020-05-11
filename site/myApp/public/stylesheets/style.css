@@ -242,3 +242,35 @@ header{
     padding: 0px;
   }
 }
+
+
+/* estilo del addproduct */
+
+
+.newproduct {
+  justify-content: center;
+}
+
+.cont1 {
+  margin-left: 2px;
+}
+
+.cont2 {
+  text-align: center;
+}
+
+.cont2 img {
+  margin-top: 22px;
+  border-radius: 6px;
+  width: 80%;
+  border: 1px solid #adbaba;
+}
+
+.container-form {
+  width: 80%;
+}
+
+form input, select, textarea {
+  width: 100%;
+  margin-bottom: 5px;
+}

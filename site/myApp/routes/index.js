@@ -10,4 +10,8 @@ router.get('/carrito/', function(req, res, next) {
   res.render('carrito', { title: 'Express' });
 });
 
+router.get('/carga/', function(req, res, next) {
+  res.render('addproduct', { title: 'Express' });
+});
+
 module.exports = router;
