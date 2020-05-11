@@ -10,11 +10,157 @@
   --light-gray: #ebebeb;
 }
 
+/* Basicas */
+
 body {
   padding: 50px;
+  padding-top: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+ul{
+  margin-bottom: 0rem;
+}
+
 a {
-  color: var(--celeste)
+  color: var(--celeste);
+  display: inline-block;
+}
+
+/* Header */
+
+header{
+  margin-bottom: 30px;
+}
+
+#contenedor-header{
+  border: var(--celeste)
+}
+
+.card-header{
+  background-color: var(--white);
+  border: var(--white);
+}
+
+.top-navbar {
+  font-size: 1.5em;
+  list-style: none;
+}
+
+.left-bar a {
+  display: block;
+  padding: 5px 5px;
+}
+
+.right-bar a {
+  display: block;
+  padding: 5px 5px;
+}
+
+.left-bar,
+.right-bar{
+  list-style-type: none;
+}
+
+.left-bar li,
+.right-bar li{
+  float: left;
+  padding-left: 10px;
+}
+
+#main-bar{
+  justify-content: space-between;
+  border-bottom: solid 1px var(--celeste);
+  background-color: var(--white);
+}
+
+#main-bar2{
+  justify-content: space-between;
+}
+
+.badge{
+  background-color: var(--celeste);
+}
+
+#logo {
+  width: 80px;
+}
+
+.search-form_input {
+  border: solid 1px var(--celeste);
+  display: block;
+  width: 100%;
+  padding: 7px 35px 7px 7px;
+  border-radius: 3px;
+  height: 35px;
+  font-size: 1em;
+}
+
+.search-form_button {
+  position: absolute;
+  right: 2px;
+  height: 60%;
+  background-color: #ffffff;
+  border: none;
+  border-left: solid 1px var(--celeste);
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* main-productos */
+
+.productos-wrapper{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.buy-buttons-group{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.buy-buttons-group button{
+  background-color: var(--celeste);
+}
+
+/* main-footer */
+
+.borde-rojo{
+  border: 1px red solid;
+}
+
+.main-footer{
+  margin-top: 30px;
+}
+
+.nav1-footer{
+  align-self: center;
+}
+
+.nav1-footer ul{
+  list-style-type: none;
+}
+
+.nav1-footer ul li{
+  padding-bottom: 10px;
+}
+
+.nav-suscribe{
+  align-self: center;
+}
+
+.nav-suscribe p,
+.nav-suscribe i{
+  color: var(--celeste);
+}
+
+.nav-suscribe i{
+  font-size: 1.5em
 }

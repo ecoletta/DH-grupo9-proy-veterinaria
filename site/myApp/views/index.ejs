@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>Home Veterinaria</title>
     	  <!-- Font Awesome Stylesheet -->
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	      <!-- Bootstrap Grid Stylesheet -->
@@ -15,20 +15,154 @@
   </head>
 
   <body>
-    <div class="card">
+  <header>
+    <div id="contenedor-header" class="card">
       <div class="card-header">
-        Quote
+        <div class="container">
+          <div id="main-bar" class="row align-items-center">
+        <ul class="left-bar">
+					<li><a href="#"> Telefono </a></li>
+					<li><a href="#"> Correo </a></li>
+          <li><a href="#"> Whatsapp</a></li>
+        </ul>
+        <ul class="right-bar">
+          <li><a href="#">Iniciar Sesión </a></li>
+        </ul>
+          </div>
+        </div>
       </div>
+      
       <div class="card-body">
         <blockquote class="blockquote mb-0">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          <div class="container">
+            <div id="main-bar2" class="row align-items-center">
+              <img id="logo" src="/images/opc_01_logo.jpg">
+          <ul class="left-bar">
+            <li><h2><a href="#" class="badge badge-primary">Home</a></h2></li>
+            <li><h2><a href="#" class="badge badge-primary">Productos</a></h2></li>
+            <li><h2><a href="#" class="badge badge-primary">Servicios</a></h2></li>
+            <li><h2><a href="#" class="badge badge-primary">Turnos</a></h2></li>
+            <li><h2><a href="#" class="badge badge-primary">Locales</a></h2></li>
+          </ul>
+            <form action="" method="get" class="search-form">
+              <input type="text" name="search" placeholder="Buscar" class="search-form_input">
+              <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+            </form>
+            </div>
+          </div>
         </blockquote>
       </div>
     </div>
+  </header>
 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <main-productos>
+    <div class="container-fluid productos-wrapper">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <section class="card">
+            <img src="https://picsum.photos/200/300?random=1" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Alimento Gatos Carne Cat-Chow 1Kg</h5>
+              <p class="card-text">$400</p>
+              <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary">Quantity</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <section class="card">
+            <img src="https://picsum.photos/200/300?random=2" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Alimento Gatos Carne Cat-Chow 0.5Kg</h5>
+              <p class="card-text">$200</p>
+              <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary">Quantity</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <section class="card">
+            <img src="https://picsum.photos/200/300?random=3" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Alimento Gatos Pescado Cat-Chow 1Kg</h5>
+              <p class="card-text">$400</p>
+              <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary">Quantity</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <section class="card">
+            <img src="https://picsum.photos/200/300?random=4" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Alimento Gatos Pescado Cat-Chow 0.5Kg</h5>
+              <p class="card-text">$200</p>
+              <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">-</button>
+                <button type="button" class="btn btn-secondary">Quantity</button>
+                <button type="button" class="btn btn-secondary">+</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main-productos>
+
+  <footer class="main-footer">
+		<div class="container-fluid">
+			<div class="row">
+        <div class="col-12 col-lg-3"><img src="/images/opc_01_logo.jpg"></div>
+        <div class="col-12 col-lg-2 nav1-footer">
+          <ul>
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> Productos </a></li>
+            <li><a href="#"> Servicios</a></li>
+            <li><a href="#"> Locales</a></li>
+            <li><a href="#"> Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-2 nav1-footer">
+          <ul>
+            <li><a href="#"> Tienda </a></li>
+            <li><a href="#"> Buscar </a></li>
+            <li><a href="#"> Envios</a></li>
+            <li><a href="#"> Devoluciones</a></li>
+            <li><a href="#"> Atencion a clientes</a></li>
+          </ul>
+          
+        </div>
+        <div class="col-12 col-lg-5 nav-suscribe">
+          <p>Suscribase a nuestro newsletter:</p>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Ingrese su correo" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Suscribir</button>
+            </div>
+          </div>
+            <div>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram-square"></i>
+            <i class="fab fa-twitter-square"></i>
+            <i class="fab fa-pinterest-square"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+          </div>
+
+        </div>
+
+
+      </div>
+  </footer>
     
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
