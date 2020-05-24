@@ -58,12 +58,13 @@
   <main-productos>
     <div class="container-fluid productos-wrapper">
       <div class="row">
+        <%for (product of products){ %>
         <div class="col-12 col-sm-6 col-lg-3">
           <section class="card">
-            <img src="https://picsum.photos/200/300?random=1" class="card-img-top" alt="...">
+            <img src="https://picsum.photos/200/300?random=<%= product.name %>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Alimento Gatos Carne Cat-Chow 1Kg</h5>
-              <p class="card-text">$400</p>
+              <h5 class="card-title"><%= product.name %></h5>
+              <p class="card-text">$ <%= product.price %> </p>
               <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary">-</button>
                 <button type="button" class="btn btn-secondary">Quantity</button>
@@ -72,48 +73,7 @@
             </div>
           </section>
         </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <section class="card">
-            <img src="https://picsum.photos/200/300?random=2" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Alimento Gatos Carne Cat-Chow 0.5Kg</h5>
-              <p class="card-text">$200</p>
-              <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary">-</button>
-                <button type="button" class="btn btn-secondary">Quantity</button>
-                <button type="button" class="btn btn-secondary">+</button>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <section class="card">
-            <img src="https://picsum.photos/200/300?random=3" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Alimento Gatos Pescado Cat-Chow 1Kg</h5>
-              <p class="card-text">$400</p>
-              <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary">-</button>
-                <button type="button" class="btn btn-secondary">Quantity</button>
-                <button type="button" class="btn btn-secondary">+</button>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-3">
-          <section class="card">
-            <img src="https://picsum.photos/200/300?random=4" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Alimento Gatos Pescado Cat-Chow 0.5Kg</h5>
-              <p class="card-text">$200</p>
-              <div class="btn-group buy-buttons-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary">-</button>
-                <button type="button" class="btn btn-secondary">Quantity</button>
-                <button type="button" class="btn btn-secondary">+</button>
-              </div>
-            </div>
-          </section>
-        </div>
+        <% } %>
       </div>
     </div>
   </main-productos>
