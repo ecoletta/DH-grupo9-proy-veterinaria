@@ -14,7 +14,7 @@
     <main>
         <div class="container container-form">
             <!-- <div class="row newproduct"> -->
-                <form action="" class="row newproduct">
+                <form action="/addproduct/create" method="POST" class="row newproduct">
                     <div class="col-lg-5 col-sm-12 cont1">
 
                         <label for="name">Nombre del producto</label>
@@ -30,14 +30,14 @@
                             <option value="reptile">Reptiles</option>
                         </select>
 
-                        <label for="quantity">Cantidad disponible</label>
-                        <input type="number" name="quantity" id="quantity" class="form-control">
+                        <label for="stock">Cantidad disponible</label>
+                        <input type="number" name="stock" id="stock" class="form-control">
 
                         <label for="price">Precio</label>
                         <input type="number" name="price" id="price" class="form-control">
 
-                        <label for="off">Oferta</label>
-                        <input type="number" name="off" id="off" class="form-control">         
+                        <label for="discount">Oferta</label>
+                        <input type="number" name="discount" id="discount" class="form-control">         
                         
                         <label for="description">Descripción</label>
                         <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
