@@ -142,11 +142,11 @@
  {
   "id": 17,
   "name": "Gato",
-  "category": "dog",
+  "category": "cat",
   "stock": "123",
   "price": "456",
   "discount": "10",
-  "description": "COmida para perros de gatos",
+  "description": "Comida para perros de gatos",
   "image": "img-1590523148788.jpg"
  },
  {

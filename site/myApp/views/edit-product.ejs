@@ -14,7 +14,7 @@
     <main>
         <div class="container container-form">
             <!-- <div class="row newproduct"> -->
-                <form action="/products/create" method="POST" class="row newproduct" enctype="multipart/form-data">
+                <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST" class="row newproduct">
                     <div class="col-lg-5 col-sm-12 cont1">
 
                         <label for="name">Nombre del producto</label>
@@ -39,8 +39,8 @@
                         <label for="discount">Oferta</label>
                         <input type="number" name="discount" id="discount" class="form-control" value="<%= editProduct.discount %>">
                         
-                        <input type="file" name="img" id="img">
-						<label for="img">Selección un archivo</label>
+                        <!-- <input type="file" name="img" id="img">
+						<label for="img">Selección un archivo</label> -->
                         
                         <label for="description">Descripción</label>
                         <textarea name="description" id="description" cols="30" rows="5" class="form-control"><%= editProduct.description %></textarea>
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="col-lg-10">
-                        <button type="submit" class="btn btn-primary">Agregar</button>
+                        <button type="submit" class="btn btn-primary">Guardar producto</button>
                     </div>
 
                 </form>

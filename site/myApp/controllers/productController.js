@@ -57,6 +57,26 @@ const productController = {
 		res.render('edit-product', {
 			editProduct: product
 		});
+	},
+
+	// Función para editar los productos
+	update: (req, res) => {
+		// Buscar la posición del producto dentro del array por la propiedad id
+		const index = products.findIndex(p => p.id == req.params.id);
+
+		// Editar las propiedades del producto
+		products[index].name = req.body.name;
+		products[index].category = req.body.category;
+		products[index].stock = req.body.stock;
+		products[index].price = req.body.price;
+		products[index].discount = req.body.discount;
+		products[index].description = req.body.description;
+
+		// Guardar la información modificada en el archivo de productos
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+		// Redireccionar la página al index
+		res.redirect('/');
 	}
 
 };
