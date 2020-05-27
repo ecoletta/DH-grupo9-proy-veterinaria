@@ -10,55 +10,44 @@
 
     <%- include('./partials/header') %>
 
-
     <main>
-        <div class="container container-form">
-            <!-- <div class="row newproduct"> -->
-                <form action="" class="row newproduct">
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-12 col-md-9 col-lg-7">
+                    <h2><%= product.name %></h2>
+                    <div class="row product_container">
+                        <div class="col-12 col-md-7">
+                            <img src="/img_products/<%= product.image %>" alt="Imagen del producto" class="img_detail">
+                            <p><%= product.description %></p>
+                        </div>
+                        <div class="col-12 col-md-5 product_detail">
+                                <div class="product_info">
+                                    <h2><%= product.name %></h2>
+                                    <p>CATEGORÍA: <%= product.category %></p>
+                                    <span>$ <%= product.price %> / </span><b><%= product.discount %> %</b>
+                                    <p>Stock: <%= product.stock %>K</p>
+                                </div>
+                                       
+                                <div class="opciones">
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary btn_editar" href="#" role="button">Editar</a>
+                                        <a class="btn btn-danger btn_eliminar" href="#" role="button">Eliminar</a>
+                                    </div>
+                                    <hr>
+                                    <a class="btn btn-primary btn_agregar" href="#" role="button">Agregar al carrito</a>
 
-                    <div class="col-lg-5 col-sm-12 cont2">
-                        <img src="images/producto_01.jpg" alt="Imagen del producto a agregar">
-                    </div>
-                    <div class="col-lg-5 col-sm-12 cont1">
-
-                        <label for="name">Nombre del producto</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="XXXX">
-
-                        <label for="category">Categoria</label>
-                        <select name="category" id="category" class="form-control">
-                            <option value="cat">Gatos</option>
-                            <option value="dog">Perros</option>
-                            <option value="bird">Aves</option>
-                            <option value="fish">Peces</option>
-                            <option value="rodent">Roedores</option>
-                            <option value="reptile">Reptiles</option>
-                        </select>
-
-                        <label for="quantity">Cantidad disponible</label>
-                        <input type="number" name="quantity" id="quantity" class="form-control" placeholder="XXXX">
-
-                        <label for="price">Precio</label>
-                        <input type="number" name="price" id="price" class="form-control" placeholder="XXXX">
-
-                        <label for="off">Oferta</label>
-                        <input type="number" name="off" id="off" class="form-control" placeholder="XXXX">         
-                        
-                        <label for="description">Descripción</label>
-                        <textarea name="description" id="description" cols="30" rows="5" class="form-control" placeholder="XXXX"></textarea>
-                    
+                                </div>
+                                
+                        </div>
                     </div>
 
+                </div>
 
-
-                </form>
-            <!-- </div> -->
+            </div>
         </div>
 
     </main>
-
-    
-
-
 
     <%- include('./partials/footer') %>
 

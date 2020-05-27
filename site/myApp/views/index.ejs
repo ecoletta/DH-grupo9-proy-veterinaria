@@ -19,7 +19,10 @@
         <%for (product of products){ %>
         <div class="col-12 col-sm-6 col-lg-3">
           <section class="card">
-            <img src="https://picsum.photos/200/300?random=<%= product.name %>" class="card-img-top" alt="...">
+            <a href="/products/<%= product.id %>">
+              <img src="/img_products/<%= product.image %>" class="card-img-top" alt="...">
+<!-- https://picsum.photos/200/300?random= // esto es para que genere las imagenes aleatorias //-->
+            </a>
             <div class="card-body">
               <h5 class="card-title"><%= product.name %></h5>
               <p class="card-text">$ <%= product.price %> </p>
