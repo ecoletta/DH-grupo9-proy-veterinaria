@@ -1,20 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-const productController = require('../controllers/productController')
+// CONTROLADORES
+const indexController = require('../controllers/indexController')
 
-/* GET home page. */
-router.get('/', productController.root);
+router.get('/', indexController.root);
 
 router.get('/carrito/', function(req, res, next) {
   res.render('carrito', { title: 'Express' });
 });
-
-/*GET formulario agregar producto */
-router.get('/addproduct/', productController.create);
-
-/*POST agregar producto */
-router.post('/addproduct/create', productController.store);
 
 router.get('/registro/', function(req, res, next) {
   res.render('registro', { title: 'Express' });

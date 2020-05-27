@@ -14,7 +14,7 @@
     <main>
         <div class="container container-form">
             <!-- <div class="row newproduct"> -->
-                <form action="/addproduct/create" method="POST" class="row newproduct">
+                <form action="/products/create" method="POST" class="row newproduct" enctype="multipart/form-data">
                     <div class="col-lg-5 col-sm-12 cont1">
 
                         <label for="name">Nombre del producto</label>
@@ -37,15 +37,14 @@
                         <input type="number" name="price" id="price" class="form-control">
 
                         <label for="discount">Oferta</label>
-                        <input type="number" name="discount" id="discount" class="form-control">         
+                        <input type="number" name="discount" id="discount" class="form-control">
+                        
+                        <input type="file" name="img" id="img">
+						<label for="img">Selección un archivo</label>
                         
                         <label for="description">Descripción</label>
                         <textarea name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
                     
-                    </div>
-
-                    <div class="col-lg-5 col-sm-12 cont2">
-                        <img src="images/producto_01.jpg" alt="Imagen del producto a agregar">
                     </div>
 
                     <div class="col-lg-10">

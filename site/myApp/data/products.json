@@ -158,5 +158,35 @@
   "discount": "0",
   "description": "Alimento rico para gatitos",
   "image": "https://picsum.photos/200/300?random=16"
+ },
+ {
+  "id": 17,
+  "name": "Gato",
+  "category": "dog",
+  "stock": "123",
+  "price": "456",
+  "discount": "10",
+  "description": "COmida para perros de gatos",
+  "image": "img-1590523148788.jpg"
+ },
+ {
+  "id": 18,
+  "name": "Purina PRO Plan - Salmón en salsa",
+  "category": "cat",
+  "stock": "100",
+  "price": "76",
+  "discount": "0",
+  "description": "Comida para gatos. Sobres de salmón en salsa de 85g",
+  "image": "img-1590589222003.webp"
+ },
+ {
+  "id": 19,
+  "name": "Royal Canin - Medium Dogs Adult",
+  "category": "dog",
+  "stock": "100",
+  "price": "930",
+  "discount": "10",
+  "description": "Alimento seco para perros adultos (+12 meses y de 11 a 25kg) ",
+  "image": "img-1590589393073.webp"
  }
 ]
