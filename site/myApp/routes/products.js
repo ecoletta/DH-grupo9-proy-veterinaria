@@ -28,6 +28,9 @@ router.post('/create/', upload.any(), productController.store);
 // Detalle del producto
 router.get('/:id', productController.detail);
 
+// Eliminar producto
+router.delete('/:id', productController.destroy);
+
 
 
 module.exports = router;
