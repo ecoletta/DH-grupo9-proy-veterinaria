@@ -1,25 +1,5 @@
 [
  {
-  "id": 1,
-  "name": "Pepper - Sorrano",
-  "category": "Human Resources",
-  "stock": 129,
-  "price": 3355,
-  "discount": 65,
-  "description": "proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum",
-  "image": "product_1.jpg"
- },
- {
-  "id": 2,
-  "name": "Wine - Winzer Krems Gruner",
-  "category": "Marketing",
-  "stock": 453,
-  "price": 3085,
-  "discount": 34,
-  "description": "urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi",
-  "image": "product_2.jpg"
- },
- {
   "id": 3,
   "name": "Cranberries - Frozen",
   "category": "Sales",

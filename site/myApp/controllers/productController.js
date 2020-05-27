@@ -42,6 +42,13 @@ const productController = {
 		res.render('detalle', {
 			product: product
 		});
+	},
+
+	destroy: (req, res) => {
+		const index = products.findIndex(p => p.id == req.params.id);
+		const product = products.splice(index, 1);
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		res.redirect('/');
 	}
 };
 
