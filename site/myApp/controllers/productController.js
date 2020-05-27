@@ -49,7 +49,16 @@ const productController = {
 		const product = products.splice(index, 1);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 		res.redirect('/');
+	},
+
+	edit: (req, res) => {
+		const productId	= req.params.id;
+		const product = products.find(p => p.id == productId);
+		res.render('edit-product', {
+			editProduct: product
+		});
 	}
+
 };
 
 module.exports = productController;

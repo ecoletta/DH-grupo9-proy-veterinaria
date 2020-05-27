@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('./partials/head') %>
+</head>
+<body>
+
+    <%- include('./partials/header') %>
+
+
+    <main>
+        <div class="container container-form">
+            <!-- <div class="row newproduct"> -->
+                <form action="/products/create" method="POST" class="row newproduct" enctype="multipart/form-data">
+                    <div class="col-lg-5 col-sm-12 cont1">
+
+                        <label for="name">Nombre del producto</label>
+                        <input type="text" name="name" id="name" class="form-control" value="<%= editProduct.name %>">
+
+                        <label for="category">Categoria</label>
+                        <select name="category" id="category" class="form-control">
+                            <option value="cat" <% if(editProduct.category == "cat"){ %> selected <% } %> >Gatos</option>
+                            <option value="dog" <% if(editProduct.category == "dog"){ %> selected <% } %> >Perros</option>
+                            <option value="bird" <% if(editProduct.category == "bird"){ %> selected <% } %> >Aves</option>
+                            <option value="fish" <% if(editProduct.category == "fish"){ %> selected <% } %> >Peces</option>
+                            <option value="rodent" <% if(editProduct.category == "rodent"){ %> selected <% } %> >Roedores</option>
+                            <option value="reptile" <% if(editProduct.category == "reptile"){ %> selected <% } %> >Reptiles</option>
+                        </select>
+
+                        <label for="stock">Cantidad disponible</label>
+                        <input type="number" name="stock" id="stock" class="form-control" value="<%= editProduct.stock %>">
+
+                        <label for="price">Precio</label>
+                        <input type="number" name="price" id="price" class="form-control" value="<%= editProduct.price %>">
+
+                        <label for="discount">Oferta</label>
+                        <input type="number" name="discount" id="discount" class="form-control" value="<%= editProduct.discount %>">
+                        
+                        <input type="file" name="img" id="img">
+						<label for="img">Selección un archivo</label>
+                        
+                        <label for="description">Descripción</label>
+                        <textarea name="description" id="description" cols="30" rows="5" class="form-control"><%= editProduct.description %></textarea>
+                    
+                    </div>
+
+                    <div class="col-lg-10">
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    </div>
+
+                </form>
+            <!-- </div> -->
+        </div>
+
+    </main>
+
+    
+
+
+
+    <%- include('./partials/footer') %>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
