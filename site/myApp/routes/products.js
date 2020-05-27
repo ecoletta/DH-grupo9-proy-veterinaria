@@ -21,15 +21,16 @@ const productController = require('../controllers/productController')
 // Listado de productos
 router.get('/', productController.root);
 
-// Detalle del producto
-router.get('/:id', productController.detail);
-
-// Formulario de creación de productos
+// Formulario de creación de productos y acción de creación
 router.get('/create/', productController.create);
 router.post('/create/', upload.any(), productController.store);
 
-// Editar producto
+// Detalle del producto en particular
+router.get('/:id', productController.detail);
+
+// Formulario de edición de productos y acción de edición
 router.get('/:id/edit', productController.edit);
+router.put('/:id', productController.update);
 
 // Eliminar producto
 router.delete('/:id', productController.destroy);
