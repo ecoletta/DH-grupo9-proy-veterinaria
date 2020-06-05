@@ -10,10 +10,6 @@ router.get('/carrito/', function(req, res, next) {
   res.render('carrito', { title: 'Express' });
 });
 
-router.get('/registro/', function(req, res, next) {
-  res.render('registro', { title: 'Express' });
-});
-
 router.get('/detalle/', function(req, res, next) {
   res.render('detalle', { title: 'Express' });
 });
