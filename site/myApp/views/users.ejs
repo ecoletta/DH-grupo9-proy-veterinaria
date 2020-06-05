@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de productos</title>
+    <title>Home Veterinaria</title>
 
     <%- include('./partials/head') %>
     
@@ -19,7 +19,10 @@
         <%for (product of products){ %>
         <div class="col-12 col-sm-6 col-lg-3">
           <section class="card">
-            <img src="/img_products/<%= product.image %>" class="card-img-top" alt="...">
+            <a href="/products/<%= product.id %>">
+              <img src="/img_products/<%= product.image %>" class="card-img-top" alt="...">
+<!-- https://picsum.photos/200/300?random= // esto es para que genere las imagenes aleatorias //-->
+            </a>
             <div class="card-body">
               <h5 class="card-title"><%= product.name %></h5>
               <p class="card-text">$ <%= product.price %> </p>
@@ -43,4 +46,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
-
