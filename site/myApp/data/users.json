@@ -456,5 +456,21 @@
   "email": "juanperez@pepe.com.ar",
   "password": "123",
   "image": "https://picsum.photos/200/300?random=51"
+ },
+ {
+  "id": 52,
+  "first_name": "Mario",
+  "last_name": "Bros",
+  "email": "fontanero@bros.com.ar",
+  "password": "marito",
+  "image": "imgUser-1591731803105.JPG"
+ },
+ {
+  "id": 53,
+  "first_name": "Luigi",
+  "last_name": "Bros",
+  "email": "fontaneroLuigi@bros.com",
+  "password": "$2b$10$x.eaKW4KeYg1dWx/0Z17uunRjYs6kEU4yzY40OX9Qjtfz7elZ54UK",
+  "image": "imgUser-1591733909844.JPG"
  }
 ]

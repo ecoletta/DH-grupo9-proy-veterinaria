@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcrypt');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -22,11 +23,11 @@ const usersController = {
 			first_name: req.body.name,
 			last_name: req.body.apellido,
 			email: req.body.email,
-			password: req.body.password,
+			password: bcrypt.hashSync(req.body.password, 10),
+			//Recordar que el req.body tambien trae "repetir-contraseña" para una futura validacion
 			category: req.body.category,
-			image: "https://picsum.photos/200/300?random=" + newId
-			//image: req.files[0].filename
-
+			//image: "https://picsum.photos/200/300?random=" + newId
+			image: req.files[0].filename
 		};
 		const finalUser = [...users, newUser];
 		fs.writeFileSync(usersFilePath, JSON.stringify(finalUser, null, ' '));

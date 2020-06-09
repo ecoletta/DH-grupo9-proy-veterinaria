@@ -1,0 +1,11 @@
+1-configurar haga el post con los datos (OK)
+2-configurar para que guarde el alta de usuario  (OK)
+3-configurar en la vista la carga de imagen (OK)
+4-agregar input type file (OK)
+5-agregar enc type en el formulario (OK)
+6-implementar disk storage(OK)
+7-configurar la ruta (OK)
+8-configurar el filename para los archivos que se iran subiendo (OK)
+9-agregar el upload any en todas las rutas (OK)
+10-encriptar la contraseña con bcrypt (OK)
+
