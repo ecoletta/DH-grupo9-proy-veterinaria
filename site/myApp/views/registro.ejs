@@ -14,7 +14,7 @@
     <main>
         <div class="container container-form">
             <!-- <div class="row newproduct"> -->
-                <form action="" class="row newproduct">
+                <form action="/users/registro" method="POST" class="row newproduct" enctype="multipart/form-data">
                     <div class="col-lg-7 col-sm-12 cont1">
 
                         <label for="name">Nombre</label>
@@ -26,12 +26,16 @@
                         <label for="email">Correo Electronico</label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico">
 
-                        <label for="contraseña">Contraseña</label>
-                        <input type="text" name="contraseña" id="contraseña" class="form-control" placeholder="Constraseña">
+                        <label for="password">Password</label>
+                        <input type="text" name="password" id="password" class="form-control" placeholder="Password">
 
-                        <label for="confirmar-contraseña">Confirmar contraseña</label>
-                        <input type="text" name="confirmar-contraseña" id="confirmar-contraseña" class="form-control" placeholder="confirmar constraseña">      
-                        
+                        <label for="confirmarPassword">Confirmar password</label>
+                        <input type="text" name="ConfirmarPassword" id="confirmarPassword" class="form-control" placeholder="Confirmar password">      
+                        <hr>
+                        <label for="imgUser" >Cargar imagen de perfil </label>
+                        <input type="file" name="imgUser" id="imgUser">
+						<hr>
+
                         <div class="col-lg-10">
                             <button type="submit" class="btn btn-primary">Registrar</button>
                         </div>
