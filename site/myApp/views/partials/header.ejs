@@ -9,8 +9,13 @@
           <li><a href="#"> Whatsapp</a></li>
         </ul>
         <ul class="right-bar">
-          <li><a href="#">Iniciar Sesión</a></li>
+          <% if (typeof user != 'undefined') { %>
+            <li><a href=""><%= user %></a></li>
+            <li><a href="/users/logout">cerrar sesión</a></li>
+          <% } else { %>
+          <li><a href="/users/login">Iniciar Sesión</a></li>
           <li><a href="/users/registro"> Registrarse</a></li>
+          <% } %>
         </ul>
           </div>
         </div>

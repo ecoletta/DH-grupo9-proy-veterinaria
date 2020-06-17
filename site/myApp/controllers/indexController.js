@@ -8,7 +8,8 @@ const indexController = {
 	// Root - Show all products
 	root: (req, res) => {
 		res.render('index', {
-			products: products
+			products: products,
+			user: req.session.user 
 		});
 	}
 };

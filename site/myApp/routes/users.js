@@ -15,18 +15,17 @@ var storage = multer.diskStorage({
  
 var upload = multer({ storage: storage });
 
-// CONTROLADORES
+// Controlador
 const usersController = require('../controllers/usersController')
 
-/* GET Registro usuarios /users/registro. */
-router.get('/registro/', function(req, res, next) {
-  res.render('registro');
-});
-
-/* POST Registro usuarios /users/registro. */
+// Registro usuarios
+router.get('/registro/', usersController.register);
 router.post('/registro/', upload.any(), usersController.store);
 
-/* GET usuarios /users */
-router.get('/', usersController.root);
+// Login de usuarios
+router.get('/login/', usersController.login);
+router.post('/login/', usersController.validate);
+
+router.get('/logout/', usersController.logout);
 
 module.exports = router;
