@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const adminMiddleware = require('../​middlewares​/adminMiddleware');
 
 // Para la carga de archivos con multer
 var storage = multer.diskStorage({
@@ -22,7 +23,7 @@ const productController = require('../controllers/productController')
 router.get('/', productController.root);
 
 // Formulario de creación de productos y acción de creación
-router.get('/create/', productController.create);
+router.get('/create/', adminMiddleware, productController.create);
 router.post('/create/', upload.any(), productController.store);
 
 // Detalle del producto en particular

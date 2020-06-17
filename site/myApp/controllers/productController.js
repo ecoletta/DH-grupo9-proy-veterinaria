@@ -9,12 +9,15 @@ const productController = {
 	// Root - Show all products
 	root: (req, res) => {
 		res.render('products', {
-			products: products
+			products: products,
+			user: req.session.user
 		});
 	},
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('addproduct');
+		res.render('addproduct', {
+			user: req.session.user
+		});
 	},
 	// Create -  Method to store
 	store: (req, res) => {
@@ -41,7 +44,8 @@ const productController = {
 		const product = products.find(p => p.id == productId);
 
 		res.render('detalle', {
-			product: product
+			product: product,
+			user: req.session.user
 		});
 	},
 
