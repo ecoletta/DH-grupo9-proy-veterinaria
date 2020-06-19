@@ -37,6 +37,7 @@ const usersController = {
 
 		// 3 Guardar la sesión
 		req.session.user = email;
+		req.session.category = user.category;
 
 		// 4 Generar cookie si se puso recordar
 		if(req.body.remember == 'true'){
@@ -51,6 +52,7 @@ const usersController = {
 	logout: (req, res) => {
 		// Cerrar la sesión
 		req.session.user = undefined;
+		req.session.category = undefined;
 		res.cookie('user', '', {maxAge: 0});
 		res.redirect('/');
 	},

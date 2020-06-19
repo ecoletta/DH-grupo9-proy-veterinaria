@@ -30,15 +30,21 @@
                                 </div>
                                        
                                 <div class="opciones">
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary btn_editar" href="/products/<%= product.id %>/edit" role="button">Editar</a>
-                                        <!-- <a class="btn btn-danger btn_eliminar" href="#" role="button">Eliminar</a> -->
-                                        
-                                        <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                                            <button type="submit" class="btn btn-danger btn_eliminar">ELIMINAR</button>
-                                        </form>
 
-                                    </div>
+                                    <% if (category == 'admin'){ %>
+
+                                        <div class="btn-group">
+                                            <a class="btn btn-primary btn_editar" href="/products/<%= product.id %>/edit" role="button">Editar</a>
+                                            <!-- <a class="btn btn-danger btn_eliminar" href="#" role="button">Eliminar</a> -->
+                                            
+                                            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                                                <button type="submit" class="btn btn-danger btn_eliminar">ELIMINAR</button>
+                                            </form>
+
+                                        </div>
+                                    
+                                    <% } %>
+
                                     <hr>
                                     <a class="btn btn-primary btn_agregar" href="#" role="button">Agregar al carrito</a>
 

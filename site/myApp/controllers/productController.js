@@ -13,12 +13,14 @@ const productController = {
 			user: req.session.user
 		});
 	},
+
 	// Create - Form to create
 	create: (req, res) => {
 		res.render('addproduct', {
 			user: req.session.user
 		});
 	},
+
 	// Create -  Method to store
 	store: (req, res) => {
 		const newId = products.length + 1;
@@ -45,7 +47,8 @@ const productController = {
 
 		res.render('detalle', {
 			product: product,
-			user: req.session.user
+			user: req.session.user,
+			category: req.session.category
 		});
 	},
 
@@ -60,7 +63,8 @@ const productController = {
 		const productId	= req.params.id;
 		const product = products.find(p => p.id == productId);
 		res.render('edit-product', {
-			editProduct: product
+			editProduct: product,
+			user: req.session.user
 		});
 	},
 
