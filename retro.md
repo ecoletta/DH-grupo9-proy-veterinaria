@@ -7,4 +7,6 @@ Como grupo estamos funcionando bien a pesar de que Santiago Mateo Lemes no esté
 
 SPRINT 4
 
-No se nos presentaron inconvenientes para realizar el sprint 4, aunque observamos que a la página le están faltando algunas partes que van más allá de lo que se solicita para que quede funcional, como puede ser la página de perfil de usuario o la posibilidad de definir la cuenta como administrador en alguna instancia al crear el usuario. Por el momento para definir la cuenta como administrador hay que modificar el campo category en users.json como admin. Sobre el maquetado hemos estado trabajando pero todavía no hemos subido los cambios.
+Pudismos realizar el sprint 4 sin mayores inconvenientes, sólo tuvimos un problema utilizando sessions que todavía no pudismos resolver. Después de un res.redirect() los valores de la sessión se borran y es necesario volver a loguearse.
+También observamos que a la página le están faltando algunas partes que van más allá de lo que se solicita en el sprint para que quede funcional, como puede ser la página de perfil de usuario o la posibilidad de definir la cuenta como administrador. Por el momento para definir la cuenta como administrador hay que modificar el campo category en users.json como admin.
+Por otro lado, hemos estado trabajando en mejorar el maquetado pero todavía no hemos subido los cambios.
