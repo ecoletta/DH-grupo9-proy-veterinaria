@@ -24,17 +24,17 @@ router.get('/', productController.root);
 
 // Formulario de creación de productos y acción de creación
 router.get('/create/', adminMiddleware, productController.create);
-router.post('/create/', upload.any(), productController.store);
+router.post('/create/', adminMiddleware, upload.any(), productController.store);
 
 // Detalle del producto en particular
 router.get('/:id', productController.detail);
 
 // Formulario de edición de productos y acción de edición
-router.get('/:id/edit', productController.edit);
-router.put('/:id', productController.update);
+router.get('/:id/edit', adminMiddleware, productController.edit);
+router.put('/:id', adminMiddleware, productController.update);
 
 // Eliminar producto
-router.delete('/:id', productController.destroy);
+router.delete('/:id', adminMiddleware, productController.destroy);
 
 
 

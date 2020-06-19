@@ -1,20 +1,21 @@
-const fs = require('fs');
-const path = require('path');
-
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 function adminMiddleware(req, res, next){
 
     if(req.session.user != undefined){
-        const email = req.session.user;
 
-        user = users.find(user => user.email == email);
-        if(user.category == 'admin'){
+        if(req.session.category == 'admin'){
             next();
+        } else {
+            res.render('login', {
+				error: 'Ingrese como administrador',
+				user: req.session.user
+			});
         }
+    } else {
+        res.render('login', {
+            error: 'No se encuentra logueado'
+        });
     }
-    res.send('no tiene permisos de administrador');
 }
 
 module.exports = adminMiddleware;

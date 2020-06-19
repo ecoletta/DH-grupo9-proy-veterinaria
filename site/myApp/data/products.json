@@ -1,25 +1,5 @@
 [
  {
-  "id": 3,
-  "name": "Cranberries - Frozen",
-  "category": "Sales",
-  "stock": 107,
-  "price": 3500,
-  "discount": 73,
-  "description": "quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et",
-  "image": "product_3.jpg"
- },
- {
-  "id": 4,
-  "name": "Salt - Sea",
-  "category": "Training",
-  "stock": 345,
-  "price": 4034,
-  "discount": 92,
-  "description": "convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate",
-  "image": "product_4.jpg"
- },
- {
   "id": 5,
   "name": "Ice Cream Bar - Oreo Cone",
   "category": "Legal",
@@ -28,76 +8,6 @@
   "discount": 69,
   "description": "ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet",
   "image": "product_5.jpg"
- },
- {
-  "id": 6,
-  "name": "Cake - Pancake",
-  "category": "Support",
-  "stock": 271,
-  "price": 4285,
-  "discount": 26,
-  "description": "dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis",
-  "image": "product_6.jpg"
- },
- {
-  "id": 7,
-  "name": "Soup Campbells Beef With Veg",
-  "category": "Legal",
-  "stock": 34,
-  "price": 3042,
-  "discount": 52,
-  "description": "imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem",
-  "image": "product_7.jpg"
- },
- {
-  "id": 8,
-  "name": "Napkin White",
-  "category": "Business Development",
-  "stock": 455,
-  "price": 3724,
-  "discount": 6,
-  "description": "odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla",
-  "image": "product_8.jpg"
- },
- {
-  "id": 9,
-  "name": "Nantucket - 518ml",
-  "category": "Product Management",
-  "stock": 159,
-  "price": 4267,
-  "discount": 36,
-  "description": "ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi",
-  "image": "product_9.jpg"
- },
- {
-  "id": 10,
-  "name": "The Pop Shoppe - Lime Rickey",
-  "category": "Business Development",
-  "stock": 161,
-  "price": 3995,
-  "discount": 12,
-  "description": "dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat",
-  "image": "product_10.jpg"
- },
- {
-  "id": 11,
-  "name": "Tart - Lemon",
-  "category": "Product Management",
-  "stock": 152,
-  "price": 3245,
-  "discount": 86,
-  "description": "rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum",
-  "image": "product_11.jpg"
- },
- {
-  "id": 12,
-  "name": "Cod - Fillets",
-  "category": "Engineering",
-  "stock": 202,
-  "price": 2048,
-  "discount": 49,
-  "description": "neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt",
-  "image": "product_12.jpg"
  },
  {
   "id": 13,
@@ -130,21 +40,11 @@
   "image": "product_15.jpg"
  },
  {
-  "id": 16,
-  "name": "Alimento 85 gr",
-  "category": "cat",
-  "stock": "20",
-  "price": "120",
-  "discount": "0",
-  "description": "Alimento rico para gatitos",
-  "image": "https://picsum.photos/200/300?random=16"
- },
- {
   "id": 17,
   "name": "Gato",
   "category": "cat",
   "stock": "123",
-  "price": "456",
+  "price": "500",
   "discount": "10",
   "description": "Comida para perros de gatos",
   "image": "img-1590523148788.jpg"
@@ -154,7 +54,7 @@
   "name": "Purina PRO Plan - Salmón en salsa",
   "category": "cat",
   "stock": "100",
-  "price": "76",
+  "price": "80",
   "discount": "0",
   "description": "Comida para gatos. Sobres de salmón en salsa de 85g",
   "image": "img-1590589222003.webp"
@@ -168,5 +68,35 @@
   "discount": "10",
   "description": "Alimento seco para perros adultos (+12 meses y de 11 a 25kg) ",
   "image": "img-1590589393073.webp"
+ },
+ {
+  "id": 18,
+  "name": "Infinity Para Perro Adulto Con Bonus Bag - 21+2 Kg",
+  "category": "dog",
+  "stock": "100",
+  "price": "1808",
+  "discount": "0",
+  "description": "Infinity Para Perro Adulto Con Bonus Bag - 21+2 Kg\r\n",
+  "image": "img-1592597829557.jpg"
+ },
+ {
+  "id": 19,
+  "name": "Pouch Dog Chow Turkey Dinner - 100 Gr",
+  "category": "dog",
+  "stock": "100",
+  "price": "35",
+  "discount": "0",
+  "description": "Pouch Dog Chow Turkey Dinner - 100 Gr\r\n",
+  "image": "img-1592597975065.jpg"
+ },
+ {
+  "id": 16,
+  "name": "Paños Educativos Cancat De 20 Unidades - 60x40Cm",
+  "category": "dog",
+  "stock": "200",
+  "price": "740",
+  "discount": "10",
+  "description": "Paños Educativos Cancat De 20 Unidades - 60x40Cm",
+  "image": "img-1592598791486.jpg"
  }
 ]
