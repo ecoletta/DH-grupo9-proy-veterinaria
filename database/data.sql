@@ -5,7 +5,7 @@ CREATE TABLE `veterinaria`.`usuarios` (
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `category` VARCHAR(15) NOT NULL,
   `image` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
@@ -38,3 +38,10 @@ ADD CONSTRAINT `id`
   REFERENCES `veterinaria`.`categorias` (`id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
+INSERT INTO categorias (name) VALUES ('cat');
+INSERT INTO categorias (name) VALUES ('dog');
+INSERT INTO categorias (name) VALUES ('bird');
+INSERT INTO categorias (name) VALUES ('fish');
+INSERT INTO categorias (name) VALUES ('rodent');
+INSERT INTO categorias (name) VALUES ('reptile');
