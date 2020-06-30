@@ -38,3 +38,10 @@ ADD CONSTRAINT `id`
   REFERENCES `veterinaria`.`categorias` (`id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
+INSERT INTO categorias (name) VALUES ('cat');
+INSERT INTO categorias (name) VALUES ('dog');
+INSERT INTO categorias (name) VALUES ('bird');
+INSERT INTO categorias (name) VALUES ('fish');
+INSERT INTO categorias (name) VALUES ('rodent');
+INSERT INTO categorias (name) VALUES ('reptile');
