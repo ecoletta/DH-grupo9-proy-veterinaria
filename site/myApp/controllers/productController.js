@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
+const { Sequelize } = require('../database/models');
 
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -9,9 +10,12 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productController = {
 	// Root - Show all products
 	root: (req, res) => {
-		res.render('products', {
-			products: products,
-			user: req.session.user
+
+		db.Productos.findAll().then((productos) => {
+			res.render('products', {
+				products: productos,
+				user: req.session.user
+			});
 		});
 	},
 
@@ -24,71 +28,99 @@ const productController = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-		const newId = products.length + 1;
+
 		const newProduct = {
-			id: newId,
 			name: req.body.name,
-			category: req.body.category,
+			id_category: req.body.category,
 			stock: req.body.stock,
 			price: req.body.price,
 			discount: req.body.discount,
 			description: req.body.description,
-			// image: "https://picsum.photos/200/300?random=" + newId
 			image: req.files[0].filename
-
 		};
-		const finalProduct = [...products, newProduct];
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProduct, null, ' '));
-		res.redirect('/');
+
+		db.Productos.create(newProduct).then(() => {
+			res.redirect('/');
+		})
 	},
 
+	// Función para mostrar el detalle de un producto
 	detail: (req, res) => {
-		const productId = req.params.id;
-		const product = products.find(p => p.id == productId);
 
-		res.render('detalle', {
-			product: product,
-			user: req.session.user,
-			category: req.session.category
+		const productId = req.params.id;
+
+		db.Productos.findByPk(productId, {
+			include: [{association: 'categorias'}]
+		}).then((producto) => {
+			res.render('detalle', {
+				product: producto,
+				user: req.session.user,
+				category: req.session.category
+			});
 		});
 	},
 
+	// Función para eliminar un producto
 	destroy: (req, res) => {
-		const index = products.findIndex(p => p.id == req.params.id);
-		const product = products.splice(index, 1);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.redirect('/');
-	},
 
-	edit: (req, res) => {
-		const productId	= req.params.id;
-		const product = products.find(p => p.id == productId);
-		res.render('edit-product', {
-			editProduct: product,
-			user: req.session.user
+		db.Productos.destroy({
+			where: {
+				id: req.params.id
+			}
+		}).then(() => {
+			res.redirect('/');
 		});
 	},
 
 	// Función para editar los productos
+	edit: (req, res) => {
+
+		const productId	= req.params.id;
+
+		db.Productos.findByPk(productId, {
+			include: [{association: 'categorias'}]
+		}).then((producto) => {
+			console.log(producto);
+			res.render('edit-product', {
+				editProduct: producto,
+				user: req.session.user
+			});
+		});
+	},
+
+	// Función para actualizar un producto
 	update: (req, res) => {
-		// Buscar la posición del producto dentro del array por la propiedad id
-		const index = products.findIndex(p => p.id == req.params.id);
 
-		// Editar las propiedades del producto
-		products[index].name = req.body.name;
-		products[index].category = req.body.category;
-		products[index].stock = req.body.stock;
-		products[index].price = req.body.price;
-		products[index].discount = req.body.discount;
-		products[index].description = req.body.description;
+		const editProduct = {
+			name: req.body.name,
+			id_category: req.body.category,
+			stock: req.body.stock,
+			price: req.body.price,
+			discount: req.body.discount,
+			description: req.body.description,
+			//image: req.files[0].filename				habría que agregar la opción de cambiar la imagen
+		}
 
-		// Guardar la información modificada en el archivo de productos
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		db.Productos.update(editProduct, {
+			where: {
+				id: req.params.id
+			}
+		}).then(() => {
+			res.redirect('/');
+		});
+	},
 
-		// Redireccionar la página al index
-		res.redirect('/');
+	search: (req, res) => {
+
+		db.Productos.findAll({
+			where: {name: {[Sequelize.Op.like]: '%' + req.query.query + '%' } }
+		}).then((productos) => {
+			res.render('search', {
+				products: productos,
+				user: req.session.user
+			});
+		});
 	}
-
 };
 
 module.exports = productController;

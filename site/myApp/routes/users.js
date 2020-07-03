@@ -15,17 +15,23 @@ var storage = multer.diskStorage({
  
 var upload = multer({ storage: storage });
 
-// Controlador
+// CONTROLADOR
 const usersController = require('../controllers/usersController')
 
-// Registro usuarios
+// REGISTRO DE USUARIOS
 router.get('/registro/', usersController.register);
 router.post('/registro/', upload.any(), usersController.store);
 
-// Login de usuarios
+// LOGIN DE USUARIOS
 router.get('/login/', usersController.login);
 router.post('/login/', usersController.validate);
 
+// LOGOUT DE USUARIOS
 router.get('/logout/', usersController.logout);
+
+// PROFILE DE USUARIOS // DEBERÍA TENER UN MIDDLEWARED
+router.get('/profile/', usersController.profile);
+router.get('/profile/edit/', usersController.edit);
+router.put('/profile/edit/', upload.any(), usersController.update);
 
 module.exports = router;

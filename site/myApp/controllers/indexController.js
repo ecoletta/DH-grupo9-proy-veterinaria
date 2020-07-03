@@ -20,10 +20,18 @@ const indexController = {
 			image: "Aca iria la url de la imagen"
 		  }); */
 
-		res.render('index', {
-			products: products,
-			user: req.session.user 
+		db.Productos.findAll()
+		db.Productos.findAll().then((productos) => {
+			res.render('index', {
+				products: productos,
+				user: req.session.user
+			});
 		});
+
+		// res.render('index', {
+		// 	products: products,
+		// 	user: req.session.user 
+		// });
 	}
 };
 

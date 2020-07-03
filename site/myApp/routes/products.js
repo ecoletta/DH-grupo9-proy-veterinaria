@@ -20,18 +20,20 @@ var upload = multer({ storage: storage });
 const productController = require('../controllers/productController')
 
 // Listado de productos
-router.get('/', productController.root);
+router.get('/', productController.root);  //DB CRUD OK
+
+router.get('/search', productController.search);
 
 // Formulario de creación de productos y acción de creación
 router.get('/create/', adminMiddleware, productController.create);
-router.post('/create/', adminMiddleware, upload.any(), productController.store);
+router.post('/create/', adminMiddleware, upload.any(), productController.store);  //DB CRUD OK
 
 // Detalle del producto en particular
-router.get('/:id', productController.detail);
+router.get('/:id', productController.detail); //DB CRUD OK
 
 // Formulario de edición de productos y acción de edición
-router.get('/:id/edit', adminMiddleware, productController.edit);
-router.put('/:id', adminMiddleware, productController.update);
+router.get('/:id/edit', adminMiddleware, productController.edit); //DB CRUD OK
+router.put('/:id', adminMiddleware, productController.update);  //DB CRUD OK
 
 // Eliminar producto
 router.delete('/:id', adminMiddleware, productController.destroy);
