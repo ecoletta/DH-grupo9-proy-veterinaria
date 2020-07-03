@@ -324,3 +324,10 @@ form input, select, textarea {
   height: 70%;
 
 }
+
+.edit_profile {
+  width: 400px;
+  border: 1px solid var(--celeste);
+  border-radius: 10px;
+  padding: 30px;
+}

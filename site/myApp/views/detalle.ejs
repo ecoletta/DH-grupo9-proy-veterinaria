@@ -24,7 +24,7 @@
                         <div class="col-12 col-md-5 product_detail">
                                 <div class="product_info">
                                     <h2><%= product.name %></h2>
-                                    <p>CATEGORÍA: <%= product.category %></p>
+                                    <p>CATEGORÍA: <%= product.categorias.name %></p>
                                     <span>$ <%= product.price %> / </span><b><%= product.discount %> %</b>
                                     <p>Stock: <%= product.stock %>K</p>
                                 </div>
@@ -38,7 +38,7 @@
                                             <!-- <a class="btn btn-danger btn_eliminar" href="#" role="button">Eliminar</a> -->
                                             
                                             <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                                                <button type="submit" class="btn btn-danger btn_eliminar">ELIMINAR</button>
+                                                <button type="submit" class="btn btn-danger btn_eliminar">Eliminar</button>
                                             </form>
 
                                         </div>

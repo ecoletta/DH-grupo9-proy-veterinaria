@@ -10,7 +10,7 @@
         </ul>
         <ul class="right-bar">
           <% if (typeof user != 'undefined') { %>
-            <li><a href=""><%= user %></a></li>
+            <li><a href="/users/profile"><%= user %></a></li>
             <li><a href="/users/logout">cerrar sesión</a></li>
           <% } else { %>
           <li><a href="/users/login">Iniciar Sesión</a></li>
@@ -33,8 +33,8 @@
             <li><h2><a href="#" class="badge badge-primary">Turnos</a></h2></li>
             <li><h2><a href="/products/create" class="badge badge-primary">Vender</a></h2></li>
           </ul>
-            <form action="" method="get" class="search-form">
-              <input type="text" name="search" placeholder="Buscar" class="search-form_input">
+            <form action="/products/search" method="GET" class="search-form">
+              <input type="text" name="query" placeholder="Buscar" class="search-form_input">
               <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
             </form>
             </div>

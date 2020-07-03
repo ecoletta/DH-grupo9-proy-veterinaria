@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Veterinaria</title>
+    <title>Listado de productos</title>
 
     <%- include('./partials/head') %>
     
@@ -21,7 +21,6 @@
           <section class="card">
             <a href="/products/<%= product.id %>">
               <img src="/img_products/<%= product.image %>" class="card-img-top" alt="...">
-<!-- https://picsum.photos/200/300?random= // esto es para que genere las imagenes aleatorias //-->
             </a>
             <div class="card-body">
               <h5 class="card-title"><%= product.name %></h5>

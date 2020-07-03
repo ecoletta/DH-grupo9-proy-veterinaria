@@ -1,47 +1,16 @@
-CREATE DATABASE `veterinaria`;
+INSERT INTO usuarios VALUES (DEFAULT, 'Donald', 'Trump', 'trump@gmail.com', '$2b$10$79rzWguLQmVJ5THeInmZr.6.GlwuuF6Zb5QuAX7qSOZzGvwAvq0Vm', 'admin', 'imgUser-1593810660766.jpg');
+INSERT INTO usuarios VALUES (DEFAULT, 'Vladimir', 'Putin', 'putin@gmail.com', '$2b$10$EkFJb./P0dRSZQSBi9RizuqZNqrz7dAuOCvN2xzoL9L/z/z22GK4C', 'user', 'imgUser-1593810770088.jpg');
 
-CREATE TABLE `veterinaria`.`usuarios` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `first_name` VARCHAR(45) NOT NULL,
-  `last_name` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
-  `category` VARCHAR(15) NOT NULL,
-  `image` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`));
+INSERT INTO categorias VALUES (DEFAULT, 'cat');
+INSERT INTO categorias VALUES (DEFAULT, 'dog');
+INSERT INTO categorias VALUES (DEFAULT, 'bird');
+INSERT INTO categorias VALUES (DEFAULT, 'fish');
+INSERT INTO categorias VALUES (DEFAULT, 'rodent');
+INSERT INTO categorias VALUES (DEFAULT, 'reptile');
 
-CREATE TABLE `veterinaria`.`productos` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `id_category` INT NOT NULL,
-  `stock` INT NOT NULL,
-  `price` INT NOT NULL,
-  `discount` INT NOT NULL,
-  `description` VARCHAR(255) NOT NULL,
-  `image` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`));
-
-CREATE TABLE `veterinaria`.`categorias` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  UNIQUE INDEX `name_UNIQUE` (`name` ASC));
-
-ALTER TABLE `veterinaria`.`productos` 
-ADD INDEX `id_idx` (`id_category` ASC);
-;
-
-ALTER TABLE `veterinaria`.`productos` 
-ADD CONSTRAINT `id`
-  FOREIGN KEY (`id_category`)
-  REFERENCES `veterinaria`.`categorias` (`id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-
-INSERT INTO categorias (name) VALUES ('cat');
-INSERT INTO categorias (name) VALUES ('dog');
-INSERT INTO categorias (name) VALUES ('bird');
-INSERT INTO categorias (name) VALUES ('fish');
-INSERT INTO categorias (name) VALUES ('rodent');
-INSERT INTO categorias (name) VALUES ('reptile');
+INSERT INTO productos VALUES (DEFAULT, 'Piedras sanitarias para gatos', 1, 100, 140, 10, 'Piedras sanitarias para gatos', 'imgProduct-1593812755570.webp');
+INSERT INTO productos VALUES (DEFAULT, 'Comida húmeda para gatos', 1, 100, 76, 10, 'Pouch Pro Plan Sterilized Cat Chicken - 85 Gr', 'imgProduct-1593812820240.webp');
+INSERT INTO productos VALUES (DEFAULT, 'Comida húmeda para perros', 2, 200, 47, 5, 'Pouch Dog Chow Festival de Pollo - 100 Gr', 'imgProduct-1593812880158.webp');
+INSERT INTO productos VALUES (DEFAULT, 'Comida húmeda para gatos (salmón)', 1, 200, 47, 20, 'Felix Pouch Salmón Con Salsa - 85 Gr', 'imgProduct-1593812938416.webp');
+INSERT INTO productos VALUES (DEFAULT, 'Hueso para perro', 2, 50, 347, 0, 'Hueso Cuero Skinny - 3" x 5Unid', 'imgProduct-1593812995812.webp');
+INSERT INTO productos VALUES (DEFAULT, 'Juguete Pelota Rellenable', 2, 20, 315, 0, 'Pelota Rellenable Con Sonido Lazy Dog - 8 Cm', 'imgProduct-1593813066031.webp');
