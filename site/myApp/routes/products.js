@@ -32,9 +32,8 @@ router.get('/create/', adminMiddleware, productController.create);
 router.post('/create/', adminMiddleware, upload.any(),[
   check('name').isLength({min: 5}).withMessage('Debe ingresar al menos 5 caracteres'),
   check('description').isLength({min: 20}).withMessage('Debe ingresar al menos 20 caracteres'),
-  check('imgProduct').custom((value)=> {
-    return path.extname(value) == ".jpg" || path.extname(value) == ".jpeg" || path.extname(value) == ".png" || path.extname(value) == ".gif"}).withMessage('La extension de la imagen debe ser jpg, jpeg, png o gif'),
-] , productController.store);  //DB CRUD OK
+  check('imgProduct').custom((value,{req})=> {
+    return path.extname(req.files[0].filename) == ".jpg" || path.extname(req.files[0].filename) == ".jpeg" || path.extname(req.files[0].filename) == ".png" || path.extname(req.files[0].filename) == ".gif"}).withMessage('La extension de la imagen debe ser jpg, jpeg, png o gif'),] , productController.store);  //DB CRUD OK
 
 // Detalle del producto en particular
 router.get('/:id', productController.detail); //DB CRUD OK
