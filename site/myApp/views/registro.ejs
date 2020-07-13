@@ -13,6 +13,12 @@
 
     <main>
         <div class="container container-form">
+            <div class="col-12">
+                <% if (typeof errors != 'undefined') { %>
+                  <% for (error of errors) { %>
+                    <div class="badgeWar badge-danger"><%= error.msg %></div>
+                  <% } %>
+                <% } %>
             <!-- <div class="row newproduct"> -->
                 <form action="/users/registro" method="POST" class="row newproduct" enctype="multipart/form-data">
                     <div class="col-lg-7 col-sm-12 cont1">

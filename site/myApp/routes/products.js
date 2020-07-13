@@ -40,7 +40,10 @@ router.get('/:id', productController.detail); //DB CRUD OK
 
 // Formulario de edición de productos y acción de edición
 router.get('/:id/edit', adminMiddleware, productController.edit); //DB CRUD OK
-router.put('/:id', adminMiddleware, productController.update);  //DB CRUD OK
+router.put('/:id', adminMiddleware,[
+  check('name').isLength({min: 5}).withMessage('Debe ingresar al menos 5 caracteres'),
+  check('description').isLength({min: 20}).withMessage('Debe ingresar al menos 20 caracteres'),
+], productController.update);  //DB CRUD OK
 
 // Eliminar producto
 router.delete('/:id', adminMiddleware, productController.destroy);

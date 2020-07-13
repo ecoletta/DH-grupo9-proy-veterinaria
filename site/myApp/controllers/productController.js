@@ -98,6 +98,11 @@ const productController = {
 	// Función para actualizar un producto
 	update: (req, res) => {
 
+		if (!errors.isEmpty()){
+			//Procesar los errores para enviar a la vista
+			return res.render('edit-product',{errors: errors.errors});
+		}
+
 		const editProduct = {
 			name: req.body.name,
 			id_category: req.body.category,
