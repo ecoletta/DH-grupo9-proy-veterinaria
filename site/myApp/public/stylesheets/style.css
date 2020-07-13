@@ -82,6 +82,10 @@ header{
   background-color: var(--celeste);
 }
 
+.badgeWar{
+  background-color: red;
+}
+
 #logo {
   width: 80px;
 }

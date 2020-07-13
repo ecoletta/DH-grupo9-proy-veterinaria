@@ -12,6 +12,7 @@
     "ejs": "~2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.17.1",
+    "express-validator": "^6.6.0",
     "fs": "0.0.1-security",
     "http": "0.0.1-security",
     "http-errors": "~1.6.3",

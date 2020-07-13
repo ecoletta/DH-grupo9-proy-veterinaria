@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 const { CONNREFUSED } = require('dns');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
@@ -72,6 +73,15 @@ const usersController = {
 	},
 
 	store: (req,res) => {
+
+		let errors = validationResult(req);
+		console.log(errors);
+		console.log(req.files[0].filename);
+		//console.log(req.body);
+		if (!errors.isEmpty()){
+			//Procesar los errores para enviar a la vista
+			return res.render('registro',{errors: errors.errors});
+		}
 
 		const newUser = {
 			first_name: req.body.name,

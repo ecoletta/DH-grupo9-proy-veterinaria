@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 const { Sequelize } = require('../database/models');
+const { validationResult } = require('express-validator');
 
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -28,7 +29,13 @@ const productController = {
 
 	// Create -  Method to store
 	store: (req, res) => {
-
+		let errors = validationResult(req);
+		console.log(errors);
+		//console.log(req.body);
+		if (!errors.isEmpty()){
+			//Procesar los errores para enviar a la vista
+			return res.render('addproduct',{errors: errors.errors});
+		}
 		const newProduct = {
 			name: req.body.name,
 			id_category: req.body.category,
@@ -90,6 +97,11 @@ const productController = {
 
 	// Función para actualizar un producto
 	update: (req, res) => {
+
+		if (!errors.isEmpty()){
+			//Procesar los errores para enviar a la vista
+			return res.render('edit-product',{errors: errors.errors});
+		}
 
 		const editProduct = {
 			name: req.body.name,

@@ -13,6 +13,12 @@
 
     <main>
         <div class="container container-form">
+            <div class="col-12">
+                <% if (typeof errors != 'undefined') { %>
+                  <% for (error of errors) { %>
+                    <div class="badgeWar badge-danger"><%= error.msg %></div>
+                  <% } %>
+                <% } %>
             <!-- <div class="row newproduct"> -->
                 <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST" class="row newproduct">
                     <div class="col-lg-5 col-sm-12 cont1">
