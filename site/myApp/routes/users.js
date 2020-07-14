@@ -31,6 +31,13 @@ router.post('/registro/', upload.any(),[
   check('apellido').isLength({min: 2}).withMessage('Debe ingresar al menos 2 caracteres para apellido'),
   check('password').isLength({min: 8}).withMessage('Debe ingresar al menos 8 caracteres para password'),
   check('email').isEmail(),
+  check('email').custom(async function(value,{req}){
+     const usuario = await db.Usuarios.findOne({where : {email: req.body.email}});
+    if (usuario != null){
+      return Promise.reject();
+    }
+  }).withMessage('El usuario ya se encuentra registrado'),
+  /*
   check('email').custom((value,{req}) => {
       if(db.Usuarios.findOne({where: {email: req.body.email}}).then((valor) => {console.log(valor)}) == null){
         return true;
@@ -38,6 +45,7 @@ router.post('/registro/', upload.any(),[
         return false;
         }
   }).withMessage('El usuario ya se encuentra registrado'),
+*/
   check('imgUser').custom((value,{req})=> {
     for(extension of extensionesImagen){
       if(path.extname(req.files[0].filename) == extension){
