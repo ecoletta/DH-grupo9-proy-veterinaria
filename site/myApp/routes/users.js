@@ -37,15 +37,6 @@ router.post('/registro/', upload.any(),[
       return Promise.reject();
     }
   }).withMessage('El usuario ya se encuentra registrado'),
-  /*
-  check('email').custom((value,{req}) => {
-      if(db.Usuarios.findOne({where: {email: req.body.email}}).then((valor) => {console.log(valor)}) == null){
-        return true;
-      } else {
-        return false;
-        }
-  }).withMessage('El usuario ya se encuentra registrado'),
-*/
   check('imgUser').custom((value,{req})=> {
     for(extension of extensionesImagen){
       if(path.extname(req.files[0].filename) == extension){
