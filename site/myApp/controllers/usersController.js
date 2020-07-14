@@ -8,6 +8,9 @@ const { CONNREFUSED } = require('dns');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+//Extensiones permitidas para archivos de imagenes
+const extensionesImagen = [".JPG",".jpg",".JPEG",".jpeg",".png",".PNG",".gif",".GIF"]
+
 const usersController = {
 
 	login: (req, res) => {
@@ -76,7 +79,7 @@ const usersController = {
 
 		let errors = validationResult(req);
 		console.log(errors);
-		console.log(req.files[0].filename);
+		//console.log(req.files[0].filename);
 		//console.log(req.body);
 		if (!errors.isEmpty()){
 			//Procesar los errores para enviar a la vista

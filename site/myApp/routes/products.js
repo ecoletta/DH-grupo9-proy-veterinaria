@@ -5,6 +5,8 @@ const path = require('path');
 const { check, validationResult, body } = require('express-validator');
 const adminMiddleware = require('../​middlewares​/adminMiddleware');
 
+//Extensiones permitidas para archivos de imagenes
+const extensionesImagen = [".JPG",".jpg",".JPEG",".jpeg",".png",".PNG",".gif",".GIF"]
 
 // Para la carga de archivos con multer
 var storage = multer.diskStorage({
@@ -33,7 +35,12 @@ router.post('/create/', adminMiddleware, upload.any(),[
   check('name').isLength({min: 5}).withMessage('Debe ingresar al menos 5 caracteres'),
   check('description').isLength({min: 20}).withMessage('Debe ingresar al menos 20 caracteres'),
   check('imgProduct').custom((value,{req})=> {
-    return path.extname(req.files[0].filename) == ".jpg" || path.extname(req.files[0].filename) == ".jpeg" || path.extname(req.files[0].filename) == ".png" || path.extname(req.files[0].filename) == ".gif"}).withMessage('La extension de la imagen debe ser jpg, jpeg, png o gif'),] , productController.store);  //DB CRUD OK
+    for(extension of extensionesImagen){
+      if(path.extname(req.files[0].filename) == extension){
+        return true;
+      }
+    }
+  }).withMessage('La extension de la imagen debe ser jpg, jpeg, png o gif')], productController.store);  //DB CRUD OK
 
 // Detalle del producto en particular
 router.get('/:id', productController.detail); //DB CRUD OK

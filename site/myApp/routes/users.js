@@ -3,6 +3,10 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const { check, validationResult, body } = require('express-validator');
+const db = require('../database/models');
+
+//Extensiones permitidas para archivos de imagenes
+const extensionesImagen = [".JPG",".jpg",".JPEG",".jpeg",".png",".PNG",".gif",".GIF"]
 
 // Para la carga de archivos con multer
 var storage = multer.diskStorage({
@@ -17,7 +21,8 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 // CONTROLADOR
-const usersController = require('../controllers/usersController')
+const usersController = require('../controllers/usersController');
+const { truncate } = require('fs');
 
 // REGISTRO DE USUARIOS
 router.get('/registro/', usersController.register);
@@ -26,9 +31,19 @@ router.post('/registro/', upload.any(),[
   check('apellido').isLength({min: 2}).withMessage('Debe ingresar al menos 2 caracteres para apellido'),
   check('password').isLength({min: 8}).withMessage('Debe ingresar al menos 8 caracteres para password'),
   check('email').isEmail(),
+  check('email').custom(async function(value,{req}){
+     const usuario = await db.Usuarios.findOne({where : {email: req.body.email}});
+    if (usuario != null){
+      return Promise.reject();
+    }
+  }).withMessage('El usuario ya se encuentra registrado'),
   check('imgUser').custom((value,{req})=> {
-    return path.extname(req.files[0].filename) == ".jpg" || path.extname(req.files[0].filename) == ".jpeg" || path.extname(req.files[0].filename) == ".png" || path.extname(req.files[0].filename) == ".gif"}).withMessage('La extension de la imagen debe ser jpg, jpeg, png o gif'),
-], usersController.store);
+    for(extension of extensionesImagen){
+      if(path.extname(req.files[0].filename) == extension){
+        return true;
+      }
+    }
+  }).withMessage('La extension de la imagen debe ser jpg, jpeg, png o gif')], usersController.store);
 
 // LOGIN DE USUARIOS
 router.get('/login/', usersController.login);
