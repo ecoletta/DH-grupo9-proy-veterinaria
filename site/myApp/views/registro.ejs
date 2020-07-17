@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include('./partials/head') %>
+    <script src="/javascripts/validar-registro.js"></script>
 </head>
 <body>
 
@@ -20,26 +21,33 @@
                   <% } %>
                 <% } %>
             <!-- <div class="row newproduct"> -->
-                <form action="/users/registro" method="POST" class="row newproduct" enctype="multipart/form-data">
+                <form action="/users/registro" method="POST" class="row newproduct" enctype="multipart/form-data" id="userform" novalidate>
                     <div class="col-lg-7 col-sm-12 cont1">
 
                         <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Nombre">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="required">
+                        <p id="error_nombre" class="error"></p>
 
                         <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido">
+                        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido" required="required">
+                        <p id="error_apellido" class="error"></p>
 
                         <label for="email">Correo Electronico</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico" required="required">
+                        <p id="error_email" class="error"></p>
 
                         <label for="password">Password</label>
-                        <input type="text" name="password" id="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="required">
+                        <p id="error_password" class="error"></p>
 
                         <label for="confirmarPassword">Confirmar password</label>
-                        <input type="text" name="ConfirmarPassword" id="confirmarPassword" class="form-control" placeholder="Confirmar password">      
+                        <input type="password" name="ConfirmarPassword" id="confirmarPassword" class="form-control" placeholder="Confirmar password" required="required">      
+                        <p id="error_ConfirmarPassword" class="error"></p>
+
                         <hr>
                         <label for="imgUser" >Cargar imagen de perfil </label>
-                        <input type="file" name="imgUser" id="imgUser">
+                        <input type="file" name="imgUser" id="imgUser" required="required">
+                        <p id="error_img" class="error"></p>
 						<hr>
 
                         <div class="col-lg-10">
