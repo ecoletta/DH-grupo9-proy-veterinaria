@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <%- include('./partials/head') %>
+    <script src="/javascripts/validar-login.js"></script>
 </head>
 <body>
 
@@ -16,14 +17,16 @@
             <% if (typeof error != 'undefined'){ %>
                 <%= error %>
             <% } %>
-                <form action="/users/login" method="POST" class="row newproduct">
+                <form action="/users/login" method="POST" class="row newproduct" id="login" novalidate>
                     <div class="col-lg-7 col-sm-12 cont1">
 
                         <label for="email">E-Mail:</label>
-                        <input type="text" name="email" id="email" class="form-control">
+                        <input type="email" name="email" id="email" class="form-control" required="required">
+                        <p id="error_email" class="error"></p>
 
                         <label for="password">Contraseña:</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control" required="required">
+                        <p id="error_password" class="error"></p>
 
                         <label for="remember">¿Desea recordar el valor?</label>
                         <input type="checkbox" id="remember" name="remember" value="true">
