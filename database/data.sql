@@ -1,5 +1,5 @@
-INSERT INTO usuarios VALUES (DEFAULT, 'Donald', 'Trump', 'trump@gmail.com', '$2b$10$79rzWguLQmVJ5THeInmZr.6.GlwuuF6Zb5QuAX7qSOZzGvwAvq0Vm', 'admin', 'imgUser-1593810660766.jpg');
-INSERT INTO usuarios VALUES (DEFAULT, 'Vladimir', 'Putin', 'putin@gmail.com', '$2b$10$EkFJb./P0dRSZQSBi9RizuqZNqrz7dAuOCvN2xzoL9L/z/z22GK4C', 'user', 'imgUser-1593810770088.jpg');
+INSERT INTO usuarios VALUES (DEFAULT, 'Donald', 'Trump', 'trump@gmail.com', '$2b$10$a.hH3k.8.cdDqtTVhRVXI.9DXYb7oKlTNR1s5TXTlV8I7k00JEsvS', 'admin', 'imgUser-1593810660766.jpg');
+INSERT INTO usuarios VALUES (DEFAULT, 'Vladimir', 'Putin', 'putin@gmail.com', '$2b$10$9NRg/gEN.qBsN.MNFtQcG.MACUXlc1zPY1P/DaR6lZXU9rrdleFnW', 'user', 'imgUser-1593810770088.jpg');
 
 INSERT INTO categorias VALUES (DEFAULT, 'cat');
 INSERT INTO categorias VALUES (DEFAULT, 'dog');
