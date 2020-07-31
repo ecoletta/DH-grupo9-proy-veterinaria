@@ -10,6 +10,8 @@ const userMiddleware = require('./​middlewares​/userMiddleware');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var productsAPIRouter = require('./routes/api/products');    // PROBANDO API
+var usersAPIRouter = require('./routes/api/users');
 
 var app = express();
 
@@ -34,6 +36,8 @@ app.use(userMiddleware);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/api/products', productsAPIRouter);                // PROBANDO API
+app.use('/api/users', usersAPIRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
