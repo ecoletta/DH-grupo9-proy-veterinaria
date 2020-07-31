@@ -341,3 +341,59 @@ form input, select, textarea {
   color: red;
   font-size: x-small;
 }
+
+/* mejoras view login */
+
+.login_container {
+  width: 400px;
+  border: 1px solid var(--celeste);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 8px grey;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container_error {
+  height: 20px;
+}
+
+.checkbox_remember {
+  width: 15px;
+  height: 15px;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.remember {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.remember label,
+.remember input {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+}
+
+.regorlog {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn_log {
+  width: 50%;
+  text-align: right;
+}
+
+.btn_reg {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.btn_reg a {
+  color: #0069D9;
+}
