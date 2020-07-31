@@ -17,27 +17,38 @@
             <% if (typeof error != 'undefined'){ %>
                 <%= error %>
             <% } %>
-                <form action="/users/login" method="POST" class="row newproduct" id="login" novalidate>
-                    <div class="col-lg-7 col-sm-12 cont1">
+            <div class='login_container'>
+                <form action="/users/login" method="POST" class="newproduct" id="login" novalidate>
+                    <!-- <div class="col-lg-7 col-sm-12 cont1"> -->
 
-                        <label for="email">E-Mail:</label>
+                        <label for="email">e-mail:</label>
                         <input type="email" name="email" id="email" class="form-control" required="required">
-                        <p id="error_email" class="error"></p>
-
-                        <label for="password">Contraseña:</label>
+                        <div class="container_error">
+                            <p id="error_email" class="error"></p>
+                        </div>
+                        <label for="password">contraseña:</label>
                         <input type="password" name="password" id="password" class="form-control" required="required">
-                        <p id="error_password" class="error"></p>
+                        <div class="container_error">
+                            <p id="error_password" class="error"></p>
+                        </div>
+                        <div class="remember">
+                            <label for="remember">¿permanecer conectado?</label>
+                            <input type="checkbox" id="remember" name="remember" value="true" class="checkbox_remember">
+                        </div>
 
-                        <label for="remember">¿Desea recordar el valor?</label>
-                        <input type="checkbox" id="remember" name="remember" value="true">
-
-                        <div class="col-lg-10">
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <div class="regorlog">
+                            <div class="btn_reg">
+                                <a href="/users/registro">Crear cuenta</a>
+                            </div>
+                            <div class="btn_log">
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                            </div>
                         </div>
                     
-                    </div>
+                    <!-- </div> -->
 
                 </form>
+            </div>
         </div>
 
     </main>

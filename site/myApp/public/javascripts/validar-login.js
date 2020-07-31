@@ -5,21 +5,17 @@ window.onload = function(){
     var formulario = document.querySelector('#login');
 
     var validateEmail = function(){
-        if(email.validity.valueMissing){
-            email.style.borderColor = 'red';
-            document.querySelector('#error_email').innerText = 'Debe ingresar un email';
-            return false;
-        } else {
             if(email.validity.typeMismatch){
                 email.style.borderColor = 'red';
                 document.querySelector('#error_email').innerText = 'Ingrese un email correcto';
                 return false;
             } else {
-                email.style.borderColor = '#ced4da';
-                document.querySelector('#error_email').innerText = '';
-                return true;
+                if(!email.validity.valueMissing){
+                    email.style.borderColor = '#ced4da';
+                    document.querySelector('#error_email').innerText = '';
+                }
+                return true
             }
-        }
     }
 
     var validatePassword = function(){
@@ -34,19 +30,23 @@ window.onload = function(){
         }
     }
 
-    email.onblur = function(){validateEmail();}
-    password.onblur = function(){validatePassword();}
+    email.onblur = function(){validateEmail()}
+    // password.onblur = function(){validatePassword()}
 
     formulario.onsubmit = function(e){
         e.preventDefault();
         
-        var status = validateEmail();
+        if(email.validity.valueMissing){
+            email.style.borderColor = 'red';
+            document.querySelector('#error_email').innerText = 'Debe ingresar un email';
+        }else {
+            var status = validateEmail();
+        }
+
         status = validatePassword() && status;
 
         if(status){
             formulario.submit();
-        } else {
-            alert('El formulario contiene errores');
-        }
+        } 
     }
 }
