@@ -11,7 +11,7 @@ const productController = {
 		async function productData(){
 
 			var countByCategory = [];
-		
+			const countC = await db.Categorias.count();
 			var categorias = await db.Categorias.findAll();
 		
 			for(let i = 0; i < categorias.length; i++){
@@ -36,11 +36,13 @@ const productController = {
 			productsAPIData = {
 				meta: {
 					status: 200,
-					count: productos.length,
+					countProducts: productos.length,
+					countCategory: countC,
 					countByCategory: countByCategory,
 					url: '/api/products'
 				},
 				data: productos
+
 			}
 
 			return(productsAPIData);
