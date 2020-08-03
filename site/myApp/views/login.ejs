@@ -21,23 +21,25 @@
                 <form action="/users/login" method="POST" class="newproduct" id="login" novalidate>
                     <!-- <div class="col-lg-7 col-sm-12 cont1"> -->
 
-                        <label for="email">e-mail:</label>
-                        <input type="email" name="email" id="email" class="form-control" required="required">
+                        <label for="email">e-mail</label>
+                        <input type="email" name="email" id="email" class="form-control" required="required" placeholder="e-mail">
                         <div class="container_error">
                             <p id="error_email" class="error"></p>
                         </div>
-                        <label for="password">contraseña:</label>
-                        <input type="password" name="password" id="password" class="form-control" required="required">
+
+                        <label for="password">contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control" required="required" placeholder="contraseña">
                         <div class="container_error">
                             <p id="error_password" class="error"></p>
                         </div>
+
                         <div class="remember">
                             <label for="remember">¿permanecer conectado?</label>
                             <input type="checkbox" id="remember" name="remember" value="true" class="checkbox_remember">
                         </div>
 
                         <div class="regorlog">
-                            <div class="btn_reg">
+                            <div class="link_reg">
                                 <a href="/users/registro">Crear cuenta</a>
                             </div>
                             <div class="btn_log">
