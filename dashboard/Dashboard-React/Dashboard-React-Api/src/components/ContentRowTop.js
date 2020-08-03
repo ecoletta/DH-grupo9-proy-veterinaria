@@ -1,6 +1,5 @@
 import React from 'react';
 import ProductsInDB from './ProductsInDB';
-//import AmountOfProductsInDB from './AmountOfProductsInDB';
 import AmountOfProductsInDB2 from './AmountOfProductsInDB2';
 import AmountOfUsersInDB from './AmountOfUsersInDB';
 

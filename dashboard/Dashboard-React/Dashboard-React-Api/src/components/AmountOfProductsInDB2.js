@@ -29,7 +29,7 @@ class AmountOfProductsInDB2 extends Component {
 
     componentDidMount(){
         console.log("Me monte")
-        this.apiCall("http://localhost:3001/api/products/", this.mostrarDatos)
+        this.apiCall("http://localhost:3000/api/products/", this.mostrarDatos)
     }
 
     render(){

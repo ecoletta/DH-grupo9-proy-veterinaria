@@ -26,7 +26,7 @@ class AmountOfUsersInDB extends Component {
 
     componentDidMount(){
         console.log("Me monte")
-        this.apiCall("http://localhost:3001/api/users/", this.mostrarDatos)
+        this.apiCall("http://localhost:3000/api/users/", this.mostrarDatos)
     }
 
     render(){
