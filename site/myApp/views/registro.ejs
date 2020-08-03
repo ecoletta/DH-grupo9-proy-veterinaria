@@ -21,44 +21,56 @@
                   <% } %>
                 <% } %>
             <!-- <div class="row newproduct"> -->
-                <form action="/users/registro" method="POST" class="row newproduct" enctype="multipart/form-data" id="userform" novalidate>
-                    <div class="col-lg-7 col-sm-12 cont1">
-
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required="required">
-                        <p id="error_nombre" class="error"></p>
-
-                        <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido" required="required">
-                        <p id="error_apellido" class="error"></p>
-
-                        <label for="email">Correo Electronico</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico" required="required">
-                        <p id="error_email" class="error"></p>
-
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="required">
-                        <p id="error_password" class="error"></p>
-
-                        <label for="confirmarPassword">Confirmar password</label>
-                        <input type="password" name="ConfirmarPassword" id="confirmarPassword" class="form-control" placeholder="Confirmar password" required="required">      
-                        <p id="error_ConfirmarPassword" class="error"></p>
-
-                        <hr>
-                        <label for="imgUser" >Cargar imagen de perfil </label>
-                        <input type="file" name="imgUser" id="imgUser" required="required">
-                        <p id="error_img" class="error"></p>
-						<hr>
-
-                        <div class="col-lg-10">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
-                        </div>
+                <div class="register_container">
+                    <form action="/users/registro" method="POST" class="newproduct" enctype="multipart/form-data" id="userform" novalidate>
                     
-                    </div>
+                        <label for="name">nombre</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="nombre" required="required">
+                        <div class="container_error">
+                            <p id="error_nombre" class="error"></p>
+                        </div>
 
+                        <label for="apellido">apellido</label>
+                        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="apellido" required="required">
+                        <div class="container_error">
+                            <p id="error_apellido" class="error"></p>
+                        </div>
 
+                        <label for="email">e-mail</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="correo Electronico" required="required">
+                        <div class="container_error">
+                            <p id="error_email" class="error"></p>
+                        </div>
 
-                </form>
+                        <label for="password">contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="contraseña" required="required">
+                        <div class="container_error">
+                            <p id="error_password" class="error"></p>
+                        </div>
+
+                        <label for="confirmarPassword">confirmar contraseña</label>
+                        <input type="password" name="ConfirmarPassword" id="confirmarPassword" class="form-control" placeholder="confirmar contraseña" required="required">      
+                        <div class="container_error">
+                            <p id="error_ConfirmarPassword" class="error"></p>
+                        </div>
+                        
+                        <label>imagen de perfil</label>
+                        <div class="imageContainer" id="imageContainer">
+                            <label for="imgUser">
+                                <img id="previewImage" src="/images/image_upload.jpg" alt="imagen de perfil a cargar">
+                            </label>
+                            <input type="file" name="imgUser" id="imgUser" required="required">
+                        </div>
+                        <div class="container_error">
+                            <p id="error_img" class="error"></p>
+                        </div>
+
+                        <div class="btn_reg">
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        </div>
+                        
+                    </form>
+                </div>
             <!-- </div> -->
         </div>
 

@@ -6,8 +6,10 @@ window.onload = function(){
     var confirmarPassword = document.querySelector('#confirmarPassword');
     var file = document.querySelector('#imgUser');
     var formulario = document.querySelector('#userform');
+    var imageInput = document.querySelector('#imgUser');
+    var imageContainer = document.querySelector('#imageContainer');
 
-    const validFile = /(\.jpg|\.jpeg|\.png|\.gif)$/g;
+    const validFile = /(\.jpg|\.jpeg|\.png|\.gif)$/;
     const validPass = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}$/;
 
     var validateNombre = function(){
@@ -103,21 +105,26 @@ window.onload = function(){
 
     var validateFile = function() {
         if(file.validity.valueMissing){
-            file.style.borderColor = 'red';
+            imageContainer.style.borderColor = 'red';
             document.querySelector('#error_img').innerText = 'Debe agregar una imagen';
             return false;
         }else {
             if(validFile.test(file.value)){
-                file.style.borderColor = '#ced4da';
+                imageContainer.style.borderColor = '#ced4da';
                 document.querySelector('#error_img').innerText = '';
                 return true;    
             } else {
-                file.style.borderColor = 'red';
+                console.log(file.value);
+                imageContainer.style.borderColor = 'red';
+                var preview = document.getElementById('previewImage');
+                preview.src = '/images/image_upload.jpg';
                 document.querySelector('#error_img').innerText = 'El formato del archivo debe ser JPG, JPEG, PNG o GIF';
                 return false;
             }
         }
     }
+
+    // VALIDACIONES DEL FORMULARIO
 
     nombre.onblur = function(){validateNombre();}
     apellido.onblur = function(){validateApellido();}
@@ -139,6 +146,17 @@ window.onload = function(){
             formulario.submit();
         } else {
             alert('El formulario contiene errores');
+        }
+    }
+
+    // PREVISUALIZACIÓN DE LA IMAGEN DE PERFIL
+
+    imageInput.onchange = function(e) {
+        if(e.target.files.length > 0){
+            var src = URL.createObjectURL(e.target.files[0]);
+            var preview = document.getElementById('previewImage');
+            preview.src = src;
+            validateFile();         
         }
     }
 

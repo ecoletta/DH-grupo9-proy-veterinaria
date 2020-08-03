@@ -347,7 +347,7 @@ form input, select, textarea {
 .login_container {
   width: 400px;
   border: 1px solid var(--celeste);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 30px;
   box-shadow: 0px 0px 8px grey;
   margin-left: auto;
@@ -387,13 +387,52 @@ form input, select, textarea {
   text-align: right;
 }
 
-.btn_reg {
+.link_reg {
   width: 50%;
-  text-align: left;
   display: flex;
   align-items: center;
 }
 
-.btn_reg a {
+.link_reg a {
   color: #0069D9;
+}
+
+/* UPDATE VIEW REGISTER */
+
+.register_container {
+  width: 400px;
+  border: 1px solid var(--celeste);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0px 0px 8px grey;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn_reg {
+  text-align: right;
+}
+
+#previewImage {
+  max-width: 100%;
+  max-height: 100%;
+  cursor: pointer;
+  /* width: 100px; */
+}
+
+.imageContainer {
+  text-align: center;
+  padding: 2px;
+
+  border: 1px solid #CED4DA;
+  border-style: dashed;
+  margin-bottom: 5px;
+}
+
+.imageContainer label{
+  margin-bottom: 0px;
+}
+
+#imgUser {
+  display: none;
 }
