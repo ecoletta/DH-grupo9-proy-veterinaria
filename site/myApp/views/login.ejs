@@ -12,44 +12,56 @@
     <%- include('./partials/header') %>
 
     <main>
-        
-        <div class="container container-form">
-            <% if (typeof error != 'undefined'){ %>
-                <%= error %>
-            <% } %>
-            <div class='login_container'>
-                <form action="/users/login" method="POST" class="newproduct" id="login" novalidate>
-                    <!-- <div class="col-lg-7 col-sm-12 cont1"> -->
 
-                        <label for="email">e-mail</label>
-                        <input type="email" name="email" id="email" class="form-control" required="required" placeholder="e-mail">
-                        <div class="container_error">
-                            <p id="error_email" class="error"></p>
+
+        <% if (typeof error != 'undefined'){ %>
+            <%= error %>
+        <% } %>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-7 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <form action="/users/login" method="POST" class="newproduct" id="login" novalidate>
+
+                                <div>
+                                    <label for="email">e-mail</label>
+                                    <input type="email" name="email" id="email" class="form-control" required="required" placeholder="e-mail">
+                                    <div class="container_error">
+                                        <p id="error_email" class="error"></p>
+                                    </div>
+                                </div>
+                                    
+                                <div>
+                                    <label for="password">contraseña</label>
+                                    <input type="password" name="password" id="password" class="form-control" required="required" placeholder="contraseña">
+                                    <div class="container_error">
+                                        <p id="error_password" class="error"></p>
+                                    </div>
+                                </div>
+                                    
+            
+                                    <div class="remember">
+                                        <label for="remember">¿permanecer conectado?</label>
+                                        <input type="checkbox" id="remember" name="remember" value="true" class="checkbox_remember">
+                                    </div>
+            
+                                    <div class="regorlog">
+                                        <div class="link_reg">
+                                            <a href="/users/registro">Crear cuenta</a>
+                                        </div>
+                                        <div class="btn_log">
+                                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                                        </div>
+                                    </div>
+                                
+                            </form>
+
                         </div>
-
-                        <label for="password">contraseña</label>
-                        <input type="password" name="password" id="password" class="form-control" required="required" placeholder="contraseña">
-                        <div class="container_error">
-                            <p id="error_password" class="error"></p>
-                        </div>
-
-                        <div class="remember">
-                            <label for="remember">¿permanecer conectado?</label>
-                            <input type="checkbox" id="remember" name="remember" value="true" class="checkbox_remember">
-                        </div>
-
-                        <div class="regorlog">
-                            <div class="link_reg">
-                                <a href="/users/registro">Crear cuenta</a>
-                            </div>
-                            <div class="btn_log">
-                                <button type="submit" class="btn btn-primary">Ingresar</button>
-                            </div>
-                        </div>
-                    
-                    <!-- </div> -->
-
-                </form>
+                    </div>
+                </div>
             </div>
         </div>
 

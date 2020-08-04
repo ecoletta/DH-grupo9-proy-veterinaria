@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrar cuenta</title>
     <%- include('./partials/head') %>
     <script src="/javascripts/validar-registro.js"></script>
 </head>
@@ -11,74 +11,98 @@
 
     <%- include('./partials/header') %>
 
-
     <main>
-        <div class="container container-form">
-            <div class="col-12">
-                <% if (typeof errors != 'undefined') { %>
-                  <% for (error of errors) { %>
-                    <div class="badgeWar badge-danger"><%= error.msg %></div>
-                  <% } %>
-                <% } %>
-            <!-- <div class="row newproduct"> -->
-                <div class="register_container">
-                    <form action="/users/registro" method="POST" class="newproduct" enctype="multipart/form-data" id="userform" novalidate>
-                    
-                        <label for="name">nombre</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="nombre" required="required">
-                        <div class="container_error">
-                            <p id="error_nombre" class="error"></p>
-                        </div>
 
-                        <label for="apellido">apellido</label>
-                        <input type="text" name="apellido" id="apellido" class="form-control" placeholder="apellido" required="required">
-                        <div class="container_error">
-                            <p id="error_apellido" class="error"></p>
-                        </div>
 
-                        <label for="email">e-mail</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="correo Electronico" required="required">
-                        <div class="container_error">
-                            <p id="error_email" class="error"></p>
-                        </div>
+        <% if (typeof errors != 'undefined') { %>
+            <% for (error of errors) { %>
+                <div class="badgeWar badge-danger"><%= error.msg %></div>
+            <% } %>
+        <% } %>
 
-                        <label for="password">contraseña</label>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="contraseña" required="required">
-                        <div class="container_error">
-                            <p id="error_password" class="error"></p>
-                        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/users/registro" method="POST" class="newproduct" enctype="multipart/form-data" id="userform" novalidate>
+                                
+                                <div class="row">
+                                    
+                                    <div class="col-12 col-md-6">
 
-                        <label for="confirmarPassword">confirmar contraseña</label>
-                        <input type="password" name="ConfirmarPassword" id="confirmarPassword" class="form-control" placeholder="confirmar contraseña" required="required">      
-                        <div class="container_error">
-                            <p id="error_ConfirmarPassword" class="error"></p>
-                        </div>
-                        
-                        <label>imagen de perfil</label>
-                        <div class="imageContainer" id="imageContainer">
-                            <label for="imgUser">
-                                <img id="previewImage" src="/images/image_upload.jpg" alt="imagen de perfil a cargar">
-                            </label>
-                            <input type="file" name="imgUser" id="imgUser" required="required">
-                        </div>
-                        <div class="container_error">
-                            <p id="error_img" class="error"></p>
-                        </div>
+                                        <div>
+                                            <label for="name">nombre</label>
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="nombre" required="required">
+                                            <div class="container_error">
+                                                <p id="error_nombre" class="error"></p>
+                                            </div>
+                                        </div>
 
-                        <div class="btn_reg">
-                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                                        <div>
+                                            <label for="apellido">apellido</label>
+                                            <input type="text" name="apellido" id="apellido" class="form-control" placeholder="apellido" required="required">
+                                            <div class="container_error">
+                                                <p id="error_apellido" class="error"></p>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="email">e-mail</label>
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="e-mail" required="required">
+                                            <div class="container_error">
+                                                <p id="error_email" class="error"></p>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="password">contraseña</label>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="contraseña" required="required">
+                                            <div class="container_error">
+                                                <p id="error_password" class="error"></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12 col-md-6 d-flex flex-column">
+
+                                        <div class="order-2 order-md-1">
+                                            <label>imagen de perfil</label>
+                                            <div class="imageContainer" id="imageContainer">
+                                                <label for="imgUser">
+                                                    <img id="previewImage" src="/images/image_upload.jpg" alt="imagen de perfil a cargar">
+                                                </label>
+                                                <input type="file" name="imgUser" id="imgUser" required="required">
+                                            </div>
+                                            <div class="container_error">
+                                                <p id="error_img" class="error"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="order-1 order-md-2">
+                                            <label for="confirmarPassword">confirmar contraseña</label>
+                                            <input type="password" name="ConfirmarPassword" id="confirmarPassword" class="form-control" placeholder="confirmar contraseña" required="required">      
+                                            <div class="container_error">
+                                                <p id="error_ConfirmarPassword" class="error"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn_reg order-3 order-md-3">
+                                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </form>
                         </div>
-                        
-                    </form>
+                    </div>
                 </div>
-            <!-- </div> -->
+            </div>
         </div>
-
     </main>
-
-    
-
-
 
     <%- include('./partials/footer') %>
 
