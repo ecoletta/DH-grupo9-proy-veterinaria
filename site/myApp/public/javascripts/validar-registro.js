@@ -145,7 +145,7 @@ window.onload = function(){
         if(status){
             formulario.submit();
         } else {
-            alert('El formulario contiene errores');
+            // alert('El formulario contiene errores');
         }
     }
 
