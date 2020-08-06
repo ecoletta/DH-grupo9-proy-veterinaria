@@ -7,10 +7,7 @@ class CategoriesInDB extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            category: {
-                "category": "bird",
-                "count": 0
-            }
+            category:[]
         }
     }
 
@@ -36,7 +33,7 @@ componentDidMount(){
 
     render(){
         console.log("Estoy renderizando Categories");
-
+        console.log(this.state.category)
         return(
             <div className="col-lg-6 mb-4">						
                 <div className="card shadow mb-4">
@@ -46,7 +43,7 @@ componentDidMount(){
                 <div className="card-body">
                     <div className="row">
                         {this.state.category.map((elem,index) => (
-                            <Category count={elem.count} category={elem.category} />
+                            <Category count={elem.count} category={elem.category} key={index} />
                         ))}
                     </div>
                 </div>
