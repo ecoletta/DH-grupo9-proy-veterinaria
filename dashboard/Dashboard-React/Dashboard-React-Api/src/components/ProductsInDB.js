@@ -20,7 +20,7 @@ class ProductsInDB extends Component {
     mostrarDatos = (data) =>
     this.setState(
         {
-            cifra: data.meta.countCategory
+            cifra: data.meta.countProducts
         }
     )
 

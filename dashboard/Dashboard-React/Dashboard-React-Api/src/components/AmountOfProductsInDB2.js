@@ -23,7 +23,7 @@ class AmountOfProductsInDB2 extends Component {
     mostrarDatos = (data) =>
     this.setState(
         {
-            cifra: data.meta.countProducts
+            cifra: data.meta.countCategory
         }
     )
 
