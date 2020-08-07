@@ -1,5 +1,5 @@
 import React from 'react';
-const walter  = require ('../assets/images/dummy-avatar.jpg');
+const admin  = require ('../assets/images/opc_01_logo.jpg');
 
 function NavBar() {
   return (
@@ -18,7 +18,7 @@ function NavBar() {
           <a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
             <i className="fas fa-bell fa-fw"></i>
             {/* <!-- Counter - Alerts --> */}
-            <span className="badge badge-danger badge-counter">3+</span>
+            <span className="badge badge-danger badge-counter">2+</span>
           </a>
         </li>
 
@@ -27,7 +27,7 @@ function NavBar() {
           <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
             <i className="fas fa-envelope fa-fw"></i>
             {/* <!-- Counter - Messages --> */}
-            <span className="badge badge-danger badge-counter">7</span>
+            <span className="badge badge-danger badge-counter">1</span>
           </a>
         </li>
 
@@ -36,8 +36,8 @@ function NavBar() {
         {/* <!-- Nav Item - User Information --> */}
         <li className="nav-item dropdown no-arrow">
           <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-            <span className="mr-2 d-none d-lg-inline text-gray-600 small">Walter White</span>
-            <img className="img-profile rounded-circle" src={walter} alt="Walter" width="60" />
+            <span className="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+            <img className="img-profile rounded-circle" src={admin} alt="Walter" width="60" />
           </a>
         </li>
 

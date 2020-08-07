@@ -36,3 +36,8 @@ Nivel de acceso:
 
 Lectura (Público) 
 Edicion (Solo miembros del equipo) 
+
+/////////////////////////
+Para inicializar el dashboard se debe ejecutar el comando "npm start" en "dashboard/src/components"
+Para inicializar la app se debe ejecutar el comando "npm start" en "site/myapp"
+
