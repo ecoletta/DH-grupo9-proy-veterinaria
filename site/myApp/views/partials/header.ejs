@@ -1,45 +1,178 @@
 <header>
-    <div id="contenedor-header" class="card">
-      <div class="card-header">
-        <div class="container">
-          <div id="main-bar" class="row align-items-center">
-        <ul class="left-bar">
-					<li><a href="#"> Telefono </a></li>
-					<li><a href="#"> Correo </a></li>
-          <li><a href="#"> Whatsapp</a></li>
-        </ul>
-        <ul class="right-bar">
-          <% if (typeof user != 'undefined') { %>
-            <li><a href="/users/profile"><%= user %></a></li>
-            <li><a href="/users/logout">cerrar sesión</a></li>
-          <% } else { %>
-          <li><a href="/users/login">Iniciar Sesión</a></li>
-          <li><a href="/users/registro"> Registrarse</a></li>
-          <% } %>
-        </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <div class="container">
-            <div id="main-bar2" class="row align-items-center">
-              <img id="logo" src="/images/opc_01_logo.jpg">
-          <ul class="left-bar">
-            <li><h2><a href="/" class="badge badge-primary">Home</a></h2></li>
-            <li><h2><a href="/products" class="badge badge-primary">Productos</a></h2></li>
-            <li><h2><a href="#" class="badge badge-primary">Servicios</a></h2></li>
-            <li><h2><a href="#" class="badge badge-primary">Turnos</a></h2></li>
-            <li><h2><a href="/products/create" class="badge badge-primary">Vender</a></h2></li>
-          </ul>
-            <form action="/products/search" method="GET" class="search-form">
-              <input type="text" name="query" placeholder="Buscar" class="search-form_input">
-              <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-            </form>
+
+  <div class="barra-superior d-flex justify-content-between align-items-center">
+
+    <div class="d-flex align-items-center">
+      <a href="/">
+        <img id="logo" src="/images/opc_04_logo.png" class="ml-1 ml-md-4">
+      </a>
+      <h1 class="ml-md-2">La Vete</h1>
+    </div>
+
+    <div class="d-flex flex-grow-1 justify-content-end">
+      <div class="ml-2 ml-md-5 mr-md-4 mr-1 flex-grow-1">
+        <form action="/products/search" method="GET">
+          <div class="input-group">
+            <input type="search" name="query" class="form-control" placeholder="¿qué estás buscando?">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
             </div>
           </div>
-        </blockquote>
+        </form>
+      </div>
+
+      <div class="mr-md-4 mr-1 menu-profile">
+
+        <div class="dropleft">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <svg width="38px" height="38px" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
+              <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+            </svg>
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+            <% if (typeof user != 'undefined') { %>
+
+            <a class="dropdown-item" href="/users/profile"><%= user %></a>
+            <a class="dropdown-item" href="/users/logout">cerrar sesión</a>
+
+            <% } else { %>
+
+            <a class="dropdown-item" href="/users/login">Iniciar Sesión</a>
+            <a class="dropdown-item" href="/users/registro"> Registrarse</a>
+
+            <% } %>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="mr-md-4 mr-1 menu-liks">
+        <a class="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          <svg width="38px" height="38px" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="mr-md-4 mr-1">
+        <a href="">
+          <svg width="38px" height="38px" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+        </a>
       </div>
     </div>
-  </header>
+
+  </div>
+
+  <div class="barra-inferior">
+    <ul class="nav barra-links">
+      <li class="nav-item">
+        <a href="/" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown menu-category">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categorias
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#">Perros</a>
+            <a class="dropdown-item" href="#">Gatos</a>
+            <a class="dropdown-item" href="#">Peces</a>
+            <a class="dropdown-item" href="#">Aves</a>
+            <a class="dropdown-item" href="#">Roedores</a>
+            <a class="dropdown-item" href="#">Reptiles</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/products" class="nav-link">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link">Servicios</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link">Turnos</a>
+      </li>
+      <li class="nav-item">
+        <a href="/products/create" class="nav-link">Vender</a>
+      </li>
+    </ul>
+
+    <div class="collapse" id="collapseExample">
+      <div class="menu-down">
+        <ul class="nav flex-column text-center">
+
+          <% if (typeof user != 'undefined') { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/profile"><%= user %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout">cerrar sesión</a>
+          </li>
+          <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/login">Ingregá</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/registro">Creá tu cuenta</a>
+          </li>
+          <% } %>
+
+          <div class="dropdown-divider"></div>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Perros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Gatos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Peces</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Aves</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Roedores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reptiles</a>
+          </li>
+          <div class="dropdown-divider"></div>
+
+          <li class="nav-item">
+
+            <a class="nav-link" href="/products">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Turnos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/create">Vender</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</header>
