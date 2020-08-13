@@ -26,6 +26,8 @@ const productController = require('../controllers/productController')
 // Listado de productos
 router.get('/', productController.root);  //DB CRUD OK
 
+router.get('/category/:category', productController.category);
+
 router.get('/search', productController.search);
 
 // Formulario de creación de productos y acción de creación

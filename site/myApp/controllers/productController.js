@@ -15,9 +15,35 @@ const productController = {
 		db.Productos.findAll().then((productos) => {
 			res.render('products', {
 				products: productos,
-				user: req.session.user
+				user: req.session.user,
+				title: 'Todos los productos'
 			});
 		});
+	},
+
+	category: (req, res) => {
+		const category = req.params.category;
+		
+		const enCategory = ['cat', 'dog', 'bird', 'fish', 'rodent', 'reptile'];
+		const spCategory = ['gatos', 'perros', 'aves', 'peces', 'roedores', 'reptiles'];
+
+		const idCategory = enCategory.findIndex(element => element == category);
+
+		db.Productos.findAll({
+			include: [{
+				association: 'categorias',
+				where: {
+					name: category
+				}
+			}]
+		}).then((products) => {
+			res.render('products', {
+				products: products,
+				user: req.session.user,
+				title: 'Productos para ' + spCategory[idCategory]
+			});
+		})
+		
 	},
 
 	// Create - Form to create
@@ -87,7 +113,6 @@ const productController = {
 		db.Productos.findByPk(productId, {
 			include: [{association: 'categorias'}]
 		}).then((producto) => {
-			console.log(producto);
 			res.render('edit-product', {
 				editProduct: producto,
 				user: req.session.user
