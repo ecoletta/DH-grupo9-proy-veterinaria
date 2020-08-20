@@ -1,6 +1,6 @@
 module.exports= (sequelize, dataType) => {
 
-    const alias = 'Usuarios';
+    const alias = 'Usuario';           //lo cambié de Usuarios a Usuario
 
     const cols = {
         id: {
@@ -36,11 +36,19 @@ module.exports= (sequelize, dataType) => {
     };
  
     const config = {
-        tablename: 'usuarios',
+        tableName: 'usuarios',
         timestamps: false,
     }
  
-    const Usuario = sequelize.define('Usuarios', cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
+
+    Usuario.associate = function(models){
+        Usuario.hasMany(models.Orden, {
+            as: "ordenes",
+            foreignKey: "id_user"
+        });
+
+    }    
     
     return Usuario;
 } 

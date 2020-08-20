@@ -83,6 +83,22 @@ header a:hover {
   font-size: 14px;
 }
 
+.myCart {
+  overflow: hidden;
+}
+
+.myCart div {
+  float: left;
+  z-index: 1;
+}
+
+.myCart span {
+  float: left;
+  position: relative;
+  left: -20px;
+  z-index: 2;
+  display: none;
+}
 
 @media (max-width: 768px) {
   .barra-links {
@@ -110,6 +126,26 @@ header a:hover {
 
 /* ----------------------- END HEADER ----------------------- */
 
+/* ----------------------- MAIN/PRODUCTS ----------------------- */
+
+.addfavorites {
+  float: right;
+  position: relative;
+  left: -10px;
+  top: 10px;
+}
+
+.removeFromCart {
+  visibility: hidden;
+}
+
+#productCart {
+  visibility: hidden;
+}
+
+
+/* ----------------------- END MAIN/PRODUCTS ----------------------- */
+
 /* main-productos */
 
 .productos-wrapper{
@@ -132,6 +168,7 @@ header a:hover {
 footer {
   margin-top: 30PX;
   background-color: #72CEE0;
+  background-color: #ACE2EC;
 }
 
 footer .nav-link {
@@ -165,11 +202,6 @@ footer a:hover {
   border: 1px solid var(--celeste);
   margin-bottom: 5px;
 
-}
-
-.carrito {
-  justify-content: center;
-  width: 80%;
 }
 
 .product-image img {

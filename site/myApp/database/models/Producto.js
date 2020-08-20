@@ -1,6 +1,6 @@
 module.exports= (sequelize, dataType) => {
 
-    const alias = 'Productos';
+    const alias = 'Producto';
 
     const cols = {
         id: {
@@ -40,17 +40,21 @@ module.exports= (sequelize, dataType) => {
     };
  
     const config = {
-        tablename: 'productos',
+        tableName: 'productos',
         timestamps: false,
     };
  
     const Producto = sequelize.define(alias, cols, config);
     
     Producto.associate = function(models){
-        Producto.belongsTo(models.Categorias, {
+        Producto.belongsTo(models.Categoria, {
             as: "categorias",
             foreignKey: "id_category"
         });
+        Producto.hasMany(models.Compra, {               //agregué para la relación con compras
+            as: "compras",
+            foreignKey: "id_product"
+        })
 
     }    
 

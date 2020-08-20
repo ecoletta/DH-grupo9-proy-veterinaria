@@ -11,12 +11,12 @@ const productController = {
 		async function productData(){
 
 			var countByCategory = [];
-			const countC = await db.Categorias.count();
-			var categorias = await db.Categorias.findAll();
+			const countC = await db.Categoria.count();
+			var categorias = await db.Categoria.findAll();
 		
 			for(let i = 0; i < categorias.length; i++){
 				
-				resultado = await db.Productos.count({where: {id_category: categorias[i].id}});
+				resultado = await db.Producto.count({where: {id_category: categorias[i].id}});
 		
 				countByCategory.push({
 					category: categorias[i].name,
@@ -25,7 +25,7 @@ const productController = {
 				
 			}
 
-			var productos = await db.Productos.findAll({
+			var productos = await db.Producto.findAll({
 				include: [{association: 'categorias'}]
 			});	//ACÁ HAY QUE PONER QUE MUESTRE COMO NOMBRE DE CATEGORIA Y NO COMO ID
 
@@ -56,7 +56,7 @@ const productController = {
 	detail: (req, res) => {
 		const productId = req.params.id;
 
-		db.Productos.findByPk(productId, {
+		db.Producto.findByPk(productId, {
 			include: [{association: 'categorias'}]
 		}).then((producto) => {
 
@@ -81,11 +81,11 @@ const productController = {
 
 			var countByCategory = [];
 		
-			var categorias = await db.Categorias.findAll();
+			var categorias = await db.Categoria.findAll();
 		
 			for(let i = 0; i < categorias.length; i++){
 				
-				resultado = await db.Productos.count({where: {id_category: categorias[i].id}});
+				resultado = await db.Producto.count({where: {id_category: categorias[i].id}});
 		
 				countByCategory.push({
 					category: categorias[i].name,
@@ -94,7 +94,7 @@ const productController = {
 				
 			}
 
-			var productos = await db.Productos.findAndCountAll({
+			var productos = await db.Producto.findAndCountAll({
 				include: [{association: 'categorias'}],
 				limit: limit,
 				offset: offset

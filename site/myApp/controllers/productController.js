@@ -12,7 +12,7 @@ const productController = {
 	// Root - Show all products
 	root: (req, res) => {
 
-		db.Productos.findAll().then((productos) => {
+		db.Producto.findAll().then((productos) => {
 			res.render('products', {
 				products: productos,
 				user: req.session.user,
@@ -29,7 +29,7 @@ const productController = {
 
 		const idCategory = enCategory.findIndex(element => element == category);
 
-		db.Productos.findAll({
+		db.Producto.findAll({
 			include: [{
 				association: 'categorias',
 				where: {
@@ -72,7 +72,7 @@ const productController = {
 			image: req.files[0].filename
 		};
 
-		db.Productos.create(newProduct).then(() => {
+		db.Producto.create(newProduct).then(() => {
 			res.redirect('/');
 		})
 	},
@@ -82,7 +82,7 @@ const productController = {
 
 		const productId = req.params.id;
 
-		db.Productos.findByPk(productId, {
+		db.Producto.findByPk(productId, {
 			include: [{association: 'categorias'}]
 		}).then((producto) => {
 			res.render('detalle', {
@@ -96,7 +96,7 @@ const productController = {
 	// Función para eliminar un producto
 	destroy: (req, res) => {
 
-		db.Productos.destroy({
+		db.Producto.destroy({
 			where: {
 				id: req.params.id
 			}
@@ -110,7 +110,7 @@ const productController = {
 
 		const productId	= req.params.id;
 
-		db.Productos.findByPk(productId, {
+		db.Producto.findByPk(productId, {
 			include: [{association: 'categorias'}]
 		}).then((producto) => {
 			res.render('edit-product', {
@@ -140,7 +140,7 @@ const productController = {
 			//image: req.files[0].filename				habría que agregar la opción de cambiar la imagen
 		}
 
-		db.Productos.update(editProduct, {
+		db.Producto.update(editProduct, {
 			where: {
 				id: req.params.id
 			}
@@ -151,12 +151,17 @@ const productController = {
 
 	search: (req, res) => {
 
-		db.Productos.findAll({
+		db.Producto.findAll({
 			where: {name: {[Sequelize.Op.like]: '%' + req.query.query + '%' } }
 		}).then((productos) => {
-			res.render('search', {
+			// res.render('search', {	//unifiqué la vista con la de productos
+				// products: productos,
+				// user: req.session.user
+			// });
+			res.render('products', {
 				products: productos,
-				user: req.session.user
+				user: req.session.user,
+				title: `Resultados de búsqueda: "${req.query.query}"`
 			});
 		});
 	}
