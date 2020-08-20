@@ -20,8 +20,8 @@ const indexController = {
 			image: "Aca iria la url de la imagen"
 		  }); */
 
-		db.Productos.findAll()
-		db.Productos.findAll().then((productos) => {
+		db.Producto.findAll()
+		db.Producto.findAll().then((productos) => {
 			res.render('index', {
 				products: productos,
 				user: req.session.user

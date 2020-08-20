@@ -24,7 +24,7 @@ const usersController = {
 		const password = req.body.password;
 
 		// 1. Buscar usuario por email
-		db.Usuarios.findOne({
+		db.Usuario.findOne({
 			where: {
 				email: email
 			}
@@ -83,6 +83,7 @@ const usersController = {
 		//console.log(req.body);
 		if (!errors.isEmpty()){
 			//Procesar los errores para enviar a la vista
+			console.log("hasta aquí llegué");
 			return res.render('registro',{errors: errors.errors});
 		}
 
@@ -95,7 +96,7 @@ const usersController = {
 			image: req.files[0].filename
 		};
 
-		db.Usuarios.create(newUser).then(() => {
+		db.Usuario.create(newUser).then(() => {
 			res.redirect('/users/login/');
 		});
 	},
@@ -103,7 +104,7 @@ const usersController = {
 	profile: (req, res) => {
 
 		if(req.session.user_id != undefined){ // ESTO DEBE SER UN MIDDLEWARE
-			db.Usuarios.findOne({
+			db.Usuario.findOne({
 				where: {
 					email: req.session.user
 				}
@@ -119,7 +120,7 @@ const usersController = {
 	edit: (req, res) => {
 
 		if(req.session.user_id != undefined){ // ESTO DEBE SER UN MIDDLEWARE
-			db.Usuarios.findOne({
+			db.Usuario.findOne({
 				where: {
 					email: req.session.user
 				}
@@ -153,7 +154,7 @@ const usersController = {
 				}
 			}
 
-			db.Usuarios.findOne({
+			db.Usuario.findOne({
 				where: {
 					email: req.session.user
 				}
@@ -161,7 +162,7 @@ const usersController = {
 				console.log('BORRAR ARCHIVO DE IMAGEN DE PERFIL ANTERIOR'); // CONTINUAR CON EL CÓDIGO ACÁ
 			});
 
-			db.Usuarios.update(editUser, {
+			db.Usuario.update(editUser, {
 				where: {
 					email: req.session.user
 				}

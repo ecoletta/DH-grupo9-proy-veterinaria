@@ -32,7 +32,7 @@ router.post('/registro/', upload.any(),[
   check('password').isLength({min: 8}).withMessage('Debe ingresar al menos 8 caracteres para password'),
   check('email').isEmail(),
   check('email').custom(async function(value,{req}){
-     const usuario = await db.Usuarios.findOne({where : {email: req.body.email}});
+     const usuario = await db.Usuario.findOne({where : {email: req.body.email}});
     if (usuario != null){
       return Promise.reject();
     }

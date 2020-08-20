@@ -10,7 +10,7 @@ const userController = {
 
 		async function userData(){
 
-            var users = await db.Usuarios.findAll({attributes: ['id', 'first_name', 'last_name', 'email']});
+            var users = await db.Usuario.findAll({attributes: ['id', 'first_name', 'last_name', 'email']});
 
 			for(let i = 0; i < users.length; i++){
 				users[i].setDataValue('endpoint', '/api/users/' + users[i].id);
@@ -35,7 +35,7 @@ const userController = {
 	detail: (req, res) => {
 		const userId = req.params.id;
 
-		db.Usuarios.findByPk(userId, {
+		db.Usuario.findByPk(userId, {
 			attributes: { exclude: ['password', 'category'] }
 		  }).then((usuario) => {
 
@@ -59,7 +59,7 @@ const userController = {
 		let offset = Number(req.query.offset);
 
 		async function userData(){
-            var users = await db.Usuarios.findAndCountAll({
+            var users = await db.Usuario.findAndCountAll({
 				attributes: ['id', 'first_name', 'last_name', 'email'],
 				limit: limit,
 				offset: offset

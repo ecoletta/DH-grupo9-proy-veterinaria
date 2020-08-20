@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var productsAPIRouter = require('./routes/api/products');    // PROBANDO API
 var usersAPIRouter = require('./routes/api/users');
+var cartRouter = require('./routes/cart');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(userMiddleware);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/cart', cartRouter);
 app.use('/api/products', productsAPIRouter);                // PROBANDO API
 app.use('/api/users', usersAPIRouter);
 
