@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <%- include('./partials/head') %>
     <script src="/javascripts/validar-add.js"></script>
 </head>
+
 <body>
 
     <%- include('./partials/header') %>
@@ -14,70 +16,87 @@
 
     <main>
         <div class="container container-form">
-            <div class="col-12">
-                <% if (typeof errors != 'undefined') { %>
-                  <% for (error of errors) { %>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <% if (typeof errors != 'undefined') { %>
+                    <% for (error of errors) { %>
                     <div class="badgeWar badge-danger"><%= error.msg %></div>
-                  <% } %>
-                <% } %>
-            <!-- <div class="row newproduct"> -->
-                <form action="/products/create" method="POST" class="row newproduct" enctype="multipart/form-data" id="formulario" novalidate>
-                    <div class="col-lg-5 col-sm-12 cont1">
+                    <% } %>
+                    <% } %>
 
-                        <label for="name">Nombre del producto</label>
-                        <input type="text" name="name" id="name" class="form-control" required="required">
-                        <p id="error_name" class="error"></p>
+                    <div class="card p-4">
 
-                        <label for="category">Categoria</label>
-                        <select name="category" id="category" class="form-control">
-                            <option value="1">Gatos</option>
-                            <option value="2">Perros</option>
-                            <option value="3">Aves</option>
-                            <option value="4">Peces</option>
-                            <option value="5">Roedores</option>
-                            <option value="6">Reptiles</option>
-                        </select>
+                        <form action="/products/create" method="POST" class="newproduct" enctype="multipart/form-data"
+                            id="formulario" novalidate>
+                            <div class="cont1">
 
-                        <label for="stock">Cantidad disponible</label>
-                        <input type="number" name="stock" id="stock" class="form-control" required="required">
-                        <p id="error_stock" class="error"></p>
+                                <label for="name">Nombre del producto</label>
+                                <input type="text" name="name" id="name" class="form-control" required="required">
+                                <p id="error_name" class="error"></p>
 
-                        <label for="price">Precio</label>
-                        <input type="number" name="price" id="price" class="form-control" required="required">
-                        <p id="error_price" class="error"></p>
+                                <label for="category">Categoria</label>
+                                <select name="category" id="category" class="form-control">
+                                    <option value="1">Gatos</option>
+                                    <option value="2">Perros</option>
+                                    <option value="3">Aves</option>
+                                    <option value="4">Peces</option>
+                                    <option value="5">Roedores</option>
+                                    <option value="6">Reptiles</option>
+                                </select>
 
-                        <label for="discount">Oferta</label>
-                        <input type="number" name="discount" id="discount" class="form-control" required="required">
-                        <p id="error_discount" class="error"></p>
+                                <label for="stock">Cantidad disponible</label>
+                                <input type="number" name="stock" id="stock" class="form-control" required="required">
+                                <p id="error_stock" class="error"></p>
 
-                        <input type="file" name="imgProduct" id="img" required="required">
-                        <label for="img">Selección un archivo</label>
-                        <p id="error_img" class="error"></p>
-                        
-                        <label for="description">Descripción</label>
-                        <textarea name="description" id="description" cols="30" rows="5" class="form-control" required="required"></textarea>
-                        <p id="error_description" class="error"></p>
+                                <label for="price">Precio</label>
+                                <input type="number" name="price" id="price" class="form-control" required="required">
+                                <p id="error_price" class="error"></p>
 
+                                <label for="discount">Oferta</label>
+                                <input type="number" name="discount" id="discount" class="form-control"
+                                    required="required">
+                                <p id="error_discount" class="error"></p>
+
+                                <input type="file" name="imgProduct" id="img" required="required">
+                                <label for="img">Selección un archivo</label>
+                                <p id="error_img" class="error"></p>
+
+                                <label for="description">Descripción</label>
+                                <textarea name="description" id="description" cols="30" rows="5" class="form-control"
+                                    required="required"></textarea>
+                                <p id="error_description" class="error"></p>
+
+                            </div>
+
+                            <div class="text-right mt-3">
+                                <button type="submit" class="btn btn-primary">Agregar</button>
+                            </div>
+
+                        </form>
                     </div>
 
-                    <div class="col-lg-10">
-                        <button type="submit" class="btn btn-primary">Agregar</button>
-                    </div>
-
-                </form>
-            <!-- </div> -->
-        </div>
+                </div>
+            </div>
 
     </main>
 
-    
+
 
 
 
     <%- include('./partials/footer') %>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="../../javascripts/cart.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

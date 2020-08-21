@@ -16,6 +16,7 @@ body {
   /* padding: 50px; */
   padding-top: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F5F5F5;
 }
 
 ul{
@@ -143,6 +144,15 @@ header a:hover {
   visibility: hidden;
 }
 
+.card-body h5 {
+  font-size: 15px;
+}
+
+.card-body p {
+  font-size: 20px;
+  text-align: right;
+}
+
 
 /* ----------------------- END MAIN/PRODUCTS ----------------------- */
 
@@ -197,10 +207,15 @@ footer a:hover {
 
 /* estilo del carrito */
 
+.carrito .lessProduct, .carrito .moreProduct {
+  margin: 10px;
+}
 
 .product {
-  border: 1px solid var(--celeste);
+  border: 1px solid #DFDFDF;
+  border-radius: 0.25rem;
   margin-bottom: 5px;
+  background-color: #FFFFFF;
 
 }
 
@@ -247,7 +262,7 @@ footer a:hover {
 .total {
   margin-top: 20px;
   padding-top: 10px;
-  border-top: 1px solid var(--celeste);
+  border-top: 1px solid #DFDFDF;
   text-align: right;
 }
 
@@ -271,7 +286,7 @@ footer a:hover {
 
 
 .newproduct {
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .cont1 {
@@ -290,7 +305,7 @@ footer a:hover {
 }
 
 .container-form {
-  width: 80%;
+  /* width: 80%; */
 }
 
 form input, select, textarea {
@@ -302,14 +317,14 @@ form input, select, textarea {
 /* STYLE PARA DETALLE PRODUCTO */
 
 .product_container {
-  border-radius: 10px;
+  /* border-radius: 10px; */
   /* border: var(--gray) 1px solid; */
-  box-shadow: 0px 0px 7px 1px gray;
+  /* box-shadow: 0px 0px 7px 1px gray; */
 }
 
 
 .product_detail {
-  border-left: #bbbbbb 1px solid;
+  border-left: #DFDFDF 1px solid;
   padding: 15px;
   font-size: 20px;
 }
@@ -323,11 +338,16 @@ form input, select, textarea {
 }
 
 .btn_editar, .btn_eliminar {
-  width: 100px;
+  /* width: 100px; */
+}
+
+.btn_eliminar {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .btn_agregar {
-  width: 200px;
+  /* width: 200px; */
 }
 
 .img_detail {
@@ -340,20 +360,20 @@ form input, select, textarea {
 
 .opciones {
   text-align: center;
-  height: 30%;
+  /* height: 30%; */
 }
 
 .product_info {
-  height: 70%;
+  /* height: 70%; */
 
 }
 
-.edit_profile {
-  width: 400px;
+/* .edit_profile {
   border: 1px solid var(--celeste);
   border-radius: 10px;
   padding: 30px;
-}
+  background-color: #FFFFFF;
+} */
 
 .error {
   margin: 0px;
